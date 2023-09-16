@@ -54,6 +54,10 @@ nav.sticky .logo a {
     color: #fff;
 }
 
+nav.sticky .logo a:hover {
+    color: #111;
+}
+
 .nav-content .nav-links {
     display: flex;
 }
@@ -114,6 +118,7 @@ nav.sticky .nav-links li a:hover {
 .nav-links .active {
     color: #617A55;
 }
+
 /* === NAV END === */
 
 /* === CONTENT START === */
@@ -218,6 +223,7 @@ nav.sticky .nav-links li a:hover {
     transition: 0.3s;
     cursor: pointer;
     color: black;
+    font-size: 30px;
 }
 
 .tb-overlay:hover {
@@ -225,6 +231,147 @@ nav.sticky .nav-links li a:hover {
 }
 
 /* === TOPIC 1 END === */
+
+/* === VIDEO START === */
+.video-controls,
+.video-timer,
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.v-container {
+    width: 98%;
+    max-width: 900px;
+    position: relative;
+    background: #000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.v-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.v-wrapper::before {
+    content: "";
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: calc(100% + 35px);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.video-timeline {
+    height: 7px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.video-timeline .progress-area {
+    height: 3px;
+    position: relative;
+    background: rgba(225, 225, 225, .6);
+}
+
+.progress-area span {
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    font-size: 13px;
+    color: #fff;
+    transform: translateX(-50%);
+}
+
+.progress-area .progress-bar {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    background: #2289ff;
+}
+
+.progress-area .progress-bar::before {
+    content: "";
+    right: 0;
+    top: 50%;
+    height: 13px;
+    width: 13px;
+    background: inherit;
+    position: absolute;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.progress-area span,
+.progress-area .progress-bar::before {
+    display: none;
+}
+
+.video-timeline:hover .progress-area span,
+.video-timeline:hover .progress-area .progress-bar::before {
+    display: block;
+}
+
+.video-controls {
+    padding: 5px 20px 10px;
+}
+
+.video-controls .options {
+    width: 100%;
+}
+
+.video-controls .options:first-child {
+    justify-content: flex-start;
+}
+
+.video-controls .options:last-child {
+    justify-content: flex-end;
+}
+
+.options button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 19px;
+    background: none;
+}
+
+.options button :where(i, span) {
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+}
+
+.options input {
+    height: 4px;
+    max-width: 75px;
+}
+
+.options .video-timer {
+    font-size: 14px;
+    color: #fefefe;
+    margin-left: 15px;
+}
+
+.video-timer .separator {
+    font-size: 16px;
+    margin: 0 5px;
+    font-family: "Open sans";
+}
+
+.v-container video {
+    width: 100%;
+}
+
+/* === VIDEO END === */
 
 /* === ACCORDION START === */
 #accordion {
