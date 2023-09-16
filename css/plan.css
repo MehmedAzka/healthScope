@@ -1,0 +1,16 @@
+.sec-container {
+    padding: 9rem 40px 40px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.p-card {
+    border: 1px solid blue;
+    width: 31%;
+    height: 300px;
+    margin: 0 0 40px 0;
+}
