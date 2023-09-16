@@ -4,11 +4,13 @@
     display: flex;
     align-items: start;
     justify-content: center;
+    flex-direction: column;
+    padding: 0 0 40px 0;
 }
 
 .health-component-begin {
     width: 100%;
-    height: auto;
+    height: 210px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -125,13 +127,12 @@
     display: flex;
     align-items: start;
     margin: 15px 20px;
-    /* padding: 20px 0 0 0; */
 }
 
 .h-image img {
     width: 100%;
     object-fit: cover;
-    border: 1px solid #A4D0A4;
+    border: 1.5px solid #A4D0A4;
     border-radius: 6px;
 }
 
