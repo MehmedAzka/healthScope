@@ -243,6 +243,7 @@ nav.sticky .nav-links li a:hover {
 
 .v-container {
     width: 98%;
+    aspect-ratio: 16 / 9;
     max-width: 900px;
     position: relative;
     background: #000;
@@ -250,12 +251,27 @@ nav.sticky .nav-links li a:hover {
     overflow: hidden;
 }
 
+.v-container.fullscreen {
+    max-width: 100%;
+    width: 100%;
+}
+
 .v-wrapper {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -15px;
     z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .08s ease;
+}
+
+.v-container.show-controls .v-wrapper {
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all .13s ease;
 }
 
 .v-wrapper::before {
@@ -290,7 +306,7 @@ nav.sticky .nav-links li a:hover {
 }
 
 .progress-area .progress-bar {
-    width: 50%;
+    width: 0%;
     height: 100%;
     position: relative;
     background: #2289ff;
@@ -367,8 +383,43 @@ nav.sticky .nav-links li a:hover {
     font-family: "Open sans";
 }
 
+.playback-content .speed-options {
+    position: absolute;
+    bottom: 50px;
+    right: 60px;
+    width: 95px;
+    opacity: 0;
+    pointer-events: none;
+    list-style: none;
+    background: #fff;
+    border-radius: 4px;
+    transition: opacity .13s ease;
+}
+
+.playback-content .speed-options.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.speed-options li {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 0 5px 15px;
+}
+
+.speed-options li.s-active {
+    color: #fff;
+    background: #2289ff;
+}
+
 .v-container video {
     width: 100%;
+}
+
+.pic-in-pic.hide-pip {
+    opacity: 0;
+    display: none;
+    pointer-events: none;
 }
 
 /* === VIDEO END === */

@@ -109,7 +109,7 @@
 
     <section>
         <div class="container" style="background-color: #bbb;">
-            <div class="v-container">
+            <div class="v-container show-controls">
                 <div class="v-wrapper">
                     <div class="video-timeline">
                         <div class="progress-area">
@@ -120,7 +120,7 @@
                     <ul class="video-controls">
                         <li class="options left">
                             <button class="volume"><i class="ri-volume-up-line"></i></button>
-                            <input type="range">
+                            <input type="range" min="0" max="1" step="any">
                             <div class="video-timer">
                                 <p class="current-time">00:00</p>
                                 <p class="separator"> / </p>
@@ -133,9 +133,18 @@
                             <button class="skip-forward"><i class="ri-arrow-right-double-fill"></i></i></button>
                         </li>
                         <li class="options rigth">
-                            <button class="playback-speed">
-                                <span class="ri-slow-down-fill"></span>
-                            </button>
+                            <div class="playback-content">
+                                <button class="playback-speed">
+                                    <span class="ri-slow-down-fill"></span>
+                                </button>
+                                <ul class="speed-options">
+                                    <li data-speed="2">2x</li>
+                                    <li data-speed="1.5">1.5x</li>
+                                    <li data-speed="1" class="s-active">Normal</li>
+                                    <li data-speed="0.75">0.75x</li>
+                                    <li data-speed="0.5">0.5x</li>
+                                </ul>
+                            </div>
                             <button class="pic-in-pic">
                                 <span class="ri-picture-in-picture-line"></span>
                             </button>
@@ -143,7 +152,7 @@
                         </li>
                     </ul>
                 </div>
-                <video src="video/video-content.mkv"></video>
+                <video src="video/video-content.mp4"></video>
             </div>
         </div>
     </section>
@@ -259,5 +268,6 @@
 </body>
 
 <script src="js/script.js"></script>
+<script src="js/video.js"></script>
 
 </html>
