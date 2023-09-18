@@ -1,0 +1,106 @@
+.topp-container {
+    padding: 7rem 0 2rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.topp-container p {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 26px;
+    margin: 0 0 20px 0;
+}
+
+.topp-box {
+    padding: 14px 30px 0;
+    min-height: 19rem;
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+.topp-box::-webkit-scrollbar {
+    width: 0;
+}
+
+.topp-card {
+    position: relative;
+    min-width: 16rem;
+    height: 20rem;
+    margin: 0 20px 0 0;
+    transition: .3s ease;
+}
+
+.topp-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.topp-card:hover {
+    opacity: .8;
+}
+
+.topp-subcard {
+    position: absolute;
+    bottom: -20px;
+    left: 1rem;
+    width: 14rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    color: #111;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, .37);
+    border-radius: 6px;
+}
+
+.lt-box {
+    background-color: #FFF8D6;
+    width: 100%;
+    height: auto;
+    margin: 0 0 40px 0;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.lt-card {
+    width: 18rem;
+    height: 20rem;
+    padding: 20px;
+    word-break: normal;
+    border-radius: 6px;
+    transition: .4s;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.lt-card:hover {
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, .37);
+}
+
+.lt-card h3 {
+    color: black;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.lt-card p {
+    color: black;
+}

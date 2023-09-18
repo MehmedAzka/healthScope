@@ -224,6 +224,7 @@ nav.sticky .nav-links li a:hover {
     cursor: pointer;
     color: black;
     font-size: 30px;
+    border-radius: 6px;
 }
 
 .tb-overlay:hover {
