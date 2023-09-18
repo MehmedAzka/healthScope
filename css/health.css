@@ -1,20 +1,22 @@
 .sec-container {
     width: 100%;
+    min-height: 100vh;
     height: auto;
     display: flex;
     align-items: start;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
     padding: 0 0 40px 0;
 }
 
 .health-component-begin {
     width: 100%;
-    height: 210px;
+    height: auto;
     display: flex;
     flex-direction: column;
     position: relative;
     top: 6rem;
+    margin: 0 0 6rem 0;
 }
 
 /* === SEARCH START === */
@@ -22,6 +24,7 @@
     display: flex;
     align-items: center;
     justify-content: start;
+    margin: 0 0 30px 0;
 }
 
 .src-search {
@@ -50,6 +53,7 @@
     background-color: #A4D0A4;
     transform: scale(1.07);
 }
+
 /* === SEARCH END === */
 
 /* === SECTION START === */
@@ -75,6 +79,10 @@
     padding: 0 20px;
     transition: .2s ease-out;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #111;
 }
 
 .sec-button:hover {
@@ -82,6 +90,7 @@
     color: white;
     background-color: #A4D0A4;
 }
+
 /* === SECTION END === */
 
 /* === CONTENT START === */
@@ -103,6 +112,7 @@
     display: flex;
     justify-content: space-between;
     align-items: start;
+    color: #111;
 }
 
 .h-text {
@@ -113,12 +123,27 @@
 
 .h-text h2 {
     margin: 0 0 7px 0;
+    text-transform: capitalize;
 }
 
 .h-text p {
     width: 100%;
     height: 100%;
     word-break: keep-all;
+}
+
+.wtc {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 0 0;
+}
+
+p.writer, p.cd {
+    width: auto;
+    height: auto;
+    color: #ccc;
 }
 
 .h-image {
@@ -137,4 +162,45 @@
     border-radius: 6px;
 }
 
+.not-found-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.not-found-page h1 {
+    color: #00000058;
+}
+
 /* === CONTENT END === */
+
+/* === DATALIST START */
+datalist {
+    position: absolute;
+    top: 50px;
+    max-height: 20em;
+    border: 0 none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-transform: capitalize;
+    border-radius: 10px;
+}
+
+datalist option {
+    font-size: 1rem;
+    padding: 10px 0 10px 10px;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+/* active option styling */
+datalist option:hover,
+datalist option:focus {
+    color: #fff;
+    background-color: #617A55;
+    outline: 0 none;
+}
+
+/* === DATALIST END */

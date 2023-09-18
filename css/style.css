@@ -191,13 +191,14 @@ nav.sticky .nav-links li a:hover {
     width: 83%;
     height: 280px;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
 }
 
 .tb-card {
     position: relative;
     width: 240px;
     height: 280px;
+    margin: 0 40px 0 0;
 }
 
 .tb-image {
@@ -225,6 +226,7 @@ nav.sticky .nav-links li a:hover {
     color: black;
     font-size: 30px;
     border-radius: 6px;
+    text-transform: capitalize;
 }
 
 .tb-overlay:hover {
