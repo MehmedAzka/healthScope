@@ -1,6 +1,17 @@
 <?php
 include "connection.php";
 
+$quotes = [
+    "\"Create healthy habits, not restrictions.\"",
+    "\"Take care of your body. It’s the only place you have to live.\"",
+    "\"Healthy is an outfit that looks different on everybody.\"",
+    "\"He who has health has hope and he who has hope has everything.\"",
+    "\"It is health that is real wealth and not pieces of gold and silver.\"",
+    "\"If you don’t recognize an ingredient, your body won’t either.\""
+];
+
+$randomQuote = $quotes[array_rand($quotes)];
+
 $showAll = $conn->query("SELECT * FROM h_topic ORDER BY time_created DESC LIMIT 4");
 ?>
 
@@ -29,7 +40,7 @@ $showAll = $conn->query("SELECT * FROM h_topic ORDER BY time_created DESC LIMIT 
                 <li><a class="active" href="index.php">Home</a></li>
                 <li><a href="health.php">Health</a></li>
                 <li><a href="plan.php">Plan</a></li>
-                <li><a href="#">Discussion</a></li>
+                <li><a href="discussion.php">Discussion</a></li>
                 <li><a href="#">Service</a></li>
             </ul>
         </div>
@@ -78,7 +89,9 @@ $showAll = $conn->query("SELECT * FROM h_topic ORDER BY time_created DESC LIMIT 
                         <img class="tb-image" src="health_image/<?php echo $result3['image']; ?>" alt="">
                         <a href="health.php">
                             <div class="tb-overlay">
-                                <p><?php echo $result3['title']; ?></p>
+                                <p>
+                                    <?php echo $result3['title']; ?>
+                                </p>
                             </div>
                         </a>
                     </div>
@@ -197,6 +210,11 @@ $showAll = $conn->query("SELECT * FROM h_topic ORDER BY time_created DESC LIMIT 
                 </li>
             </ul>
         </div>
+    </section>
+
+    <section
+        style="width: 100%; height: auto; display: flex; justify-content: center; align-item: center; margin: 0 0 30px 0;">
+        <?= $randomQuote ?>
     </section>
 
     <footer>

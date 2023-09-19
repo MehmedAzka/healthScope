@@ -1,22 +1,6 @@
 <?php
 include "connection.php";
 
-$result = null;
-$showAll = null;
-
-$show = $conn->query("SELECT title FROM h_topic ORDER BY title ASC");
-
-if (isset($_GET['src-box'])) {
-    $search_term = $_GET['src-box'];
-
-    $sql = "SELECT * FROM h_topic WHERE title LIKE '%" . $search_term . "%'";
-    $result = $conn->query($sql);
-
-} else {
-    // Jika tidak ada request pencarian, ambil semua data
-    $showAll = $conn->query("SELECT * FROM h_topic ORDER BY time_created DESC LIMIT 10");
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +11,7 @@ if (isset($_GET['src-box'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/health.css">
+    <link rel="stylesheet" href="css/discussion.css">
     <link rel="icon" href="images/logo.png">
     <title> HealthScope - Health</title>
 </head>
@@ -43,76 +27,25 @@ if (isset($_GET['src-box'])) {
             </div>
             <ul class="nav-links">
                 <li><a href="index.php">Home</a></li>
-                <li><a class="active" href="health.php">Health</a></li>
+                <li><a href="health.php">Health</a></li>
                 <li><a href="plan.php">Plan</a></li>
-                <li><a href="discussion.php">Discussion</a></li>
+                <li><a class="active" href="discussion.php">Discussion</a></li>
                 <li><a href="#">Service</a></li>
             </ul>
         </div>
     </nav>
 
     <section>
-        <div class="sec-container">
-            <div class="health-component-begin">
-
-                <form method="GET">
-                    <div class="src-box">
-                        <input class="src-search" type="text" name="src-box" list="title" autocomplete="off" required>
-                        <button class="src-button" type="submit" name="src"><i class="ri-search-line"></i></button>
+        <div class="d-container">
+            <a href="#">
+                <div class="d-card">
+                    <div class="d-title">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, consequuntur rem ratione
+                            quod vel dolorem nulla tempore omnis perferendis doloribus repudiandae? Provident nisi ea
+                            rerum modi esse dolorem quibusdam libero.</p>
                     </div>
-                </form>
-
-                <datalist id="title">
-                    <?php while ($result3 = $show->fetch_assoc()) { ?>
-                        <option>
-                            <?php echo $result3['title']; ?>
-                        </option>
-                    <?php } ?>
-                </datalist>
-            </div>
-
-            <?php
-            if (($result !== null && $result->num_rows > 0) || ($showAll !== null && $showAll->num_rows > 0)) {
-                // Loop melalui hasil pencarian
-                while ($row = isset($result) ? $result->fetch_assoc() : $showAll->fetch_assoc()) { ?>
-                    <div class="h-content">
-                        <a href="#">
-                            <div class="h-card">
-                                <div class="h-text">
-                                    <h2>
-                                        <?php echo $row['title']; ?>
-                                    </h2>
-                                    <p>
-                                        <?php echo $row['subtitle']; ?>
-                                    </p>
-                                    <div class="wtc">
-                                        <p class="writer">
-                                            <i>Written by -
-                                                <?php echo $row['writer']; ?>
-                                            </i>
-                                        </p>
-                                        <p class="cd">
-                                            <?php echo $row['time_created']; ?>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="h-image">
-                                    <img src="health_image/<?php echo $row['image']; ?>" alt="image">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                <?php }
-            } else { ?>
-
-                <div class="not-found-page">
-                    <h1>Not found for "
-                        <?php echo $search_term ?>"
-                    </h1>
                 </div>
-                <?php
-            }
-            ?>
+            </a>
         </div>
     </section>
 

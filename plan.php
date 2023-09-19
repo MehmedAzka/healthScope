@@ -24,7 +24,7 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="health.php">Health</a></li>
                 <li><a class="active" href="plan.php">Plan</a></li>
-                <li><a href="#">Discussion</a></li>
+                <li><a href="discussion.php">Discussion</a></li>
                 <li><a href="#">Service</a></li>
             </ul>
         </div>
