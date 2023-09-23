@@ -1,0 +1,22 @@
+example for delete data:
+
+== HTML ==
+
+<a href="procces.php?delete=<?php echo $result['id_data']; ?>" type="button"
+    class="fa-solid fa-trash btn btn-outline-danger btn-sm mb-1" title="Delete"
+    onclick="return confirm('Are you sure you want to delete this data?')">
+</a>
+
+== PHP ==
+
+if (isset($_GET['delete'])) {
+    $id = $_GET['delete'];
+    $query = "DELETE FROM table_name WHERE column_id='$id'";
+    $sql = mysqli_query($conn, $query);
+
+    if ($sql) {
+        header('location: comunication.php');
+    } else {
+        echo $query;
+    }
+}

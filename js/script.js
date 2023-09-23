@@ -1,3 +1,6 @@
+let addDiscussionButton = document.querySelector(".add-discussion");
+const secAddDis = document.querySelector(".sec-add-dis");
+
 let nav = document.querySelector("nav");
 let ham = document.querySelector(".hamburger");
 window.onscroll = function () {
@@ -10,14 +13,21 @@ window.onscroll = function () {
     }
 }
 
-const showMenu = (toggleId, navId) => {
-    const toggle = document.getElementById(toggleId), 
-            nav = document.getElementById(navId)
+addDiscussionButton.addEventListener("click", function () {
+    if (!secAddDis.classList.contains("active")) {
+        secAddDis.classList.add("active");
+    } else {
+        secAddDis.classList.remove("active");
+    }
+});
+// const showMenu = (toggleId, navId) => {
+//     const toggle = document.getElementById(toggleId),
+//         nav = document.getElementById(navId)
 
-    toggle.addEventListener('click', () => {
-        nav.classList.toggle('show-menu')
-        toggle.classList.toggle('show-icon')
-    })
-}
+//     toggle.addEventListener('click', () => {
+//         nav.classList.toggle('show-menu')
+//         toggle.classList.toggle('show-icon')
+//     })
+// }
 
-showMenu('nav-toggle', 'nav-menu')
+// showMenu('nav-toggle', 'nav-menu')

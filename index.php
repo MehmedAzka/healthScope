@@ -12,7 +12,7 @@ $quotes = [
 
 $randomQuote = $quotes[array_rand($quotes)];
 
-$showAll = $conn->query("SELECT * FROM h_topic ORDER BY time_created DESC LIMIT 4");
+$showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 4");
 ?>
 
 <!DOCTYPE html>

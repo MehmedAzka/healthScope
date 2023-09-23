@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/plan.css">
     <link rel="icon" href="images/logo.png">
-    <title> HealthScope </title>
+    <title> HealthScope - Plan </title>
 </head>
 
 <body>

@@ -1,5 +1,7 @@
 <?php
-include "connection.php";
+include "function.php";
+
+$data = $select('discussion', 'created_date');
 
 ?>
 
@@ -13,7 +15,7 @@ include "connection.php";
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/discussion.css">
     <link rel="icon" href="images/logo.png">
-    <title> HealthScope - Health</title>
+    <title> HealthScope - Discussion</title>
 </head>
 
 <body>
@@ -36,16 +38,41 @@ include "connection.php";
     </nav>
 
     <section>
-        <div class="d-container">
-            <a href="#">
-                <div class="d-card">
-                    <div class="d-title">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, consequuntur rem ratione
-                            quod vel dolorem nulla tempore omnis perferendis doloribus repudiandae? Provident nisi ea
-                            rerum modi esse dolorem quibusdam libero.</p>
-                    </div>
+        <div class="d-center">
+            <div class="d-container">
+                <div class="d-add">
+                    <button class="add-discussion sticky"><i class="ri-add-line"></i> New Discussion</button>
                 </div>
-            </a>
+
+                <?php if (mysqli_num_rows($data) > 0) {
+                    while ($result = $data->fetch_assoc()) { ?>
+                        <div class="d-card">
+                            <div class="d-title">
+                                <p>
+                                    <?php echo $result['title'] ?>
+                                </p>
+                            </div>
+                            <div class="d-footer">
+                                <form action="function.php" method="post">
+                                    <input type="hidden" name="id_to_delete" value="<?php echo $result['id'] ?>">
+                                    <button class="ri-delete-bin-6-line" type="submit" name="delete-submit"
+                                        onclick="return confirm('Are you sure you want to delete this data?')"></button>
+                                </form>
+                            </div>
+                        </div>
+                    <?php }
+                } else { ?>
+                NOT FOUND
+                <?php } ?>
+            </div>
+
+            <form action="function.php" method="post">
+                <div class="sec-add-dis">
+                    <label for="diss">Your Discussion</label>
+                    <input type="text" name="diss" id="diss" maxlength="100" autocomplete="off">
+                    <button class="sad-submit" type="submit" name="diss-submit"><i class="ri-add-line"></i> Add</button>
+                </div>
+            </form>
         </div>
     </section>
 
@@ -98,6 +125,5 @@ include "connection.php";
 </body>
 
 <script src="js/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/datalist-css/dist/datalist-css.min.js"></script>
 
 </html>

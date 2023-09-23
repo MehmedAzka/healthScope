@@ -3,18 +3,19 @@ include "connection.php";
 
 $result = null;
 $showAll = null;
+$search_term = null;
 
 $show = $conn->query("SELECT title FROM h_topic ORDER BY title ASC");
 
 if (isset($_GET['src-box'])) {
-    $search_term = $_GET['src-box'];
+    $search_term = htmlspecialchars($_GET['src-box']);
 
     $sql = "SELECT * FROM h_topic WHERE title LIKE '%" . $search_term . "%'";
     $result = $conn->query($sql);
 
 } else {
     // Jika tidak ada request pencarian, ambil semua data
-    $showAll = $conn->query("SELECT * FROM h_topic ORDER BY time_created DESC LIMIT 10");
+    $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 10");
 }
 
 ?>
@@ -88,11 +89,11 @@ if (isset($_GET['src-box'])) {
                                     <div class="wtc">
                                         <p class="writer">
                                             <i>Written by -
-                                                <?php echo $row['writer']; ?>
+                                                <?php echo $row['created_by']; ?>
                                             </i>
                                         </p>
                                         <p class="cd">
-                                            <?php echo $row['time_created']; ?>
+                                            <?php echo $row['created_date']; ?>
                                         </p>
                                     </div>
                                 </div>
