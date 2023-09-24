@@ -7,7 +7,8 @@ $quotes = [
     "\"Healthy is an outfit that looks different on everybody.\"",
     "\"He who has health has hope and he who has hope has everything.\"",
     "\"It is health that is real wealth and not pieces of gold and silver.\"",
-    "\"If you don’t recognize an ingredient, your body won’t either.\""
+    "\"If you don’t recognize an ingredient, your body won’t either.\"",
+    "\"Together is easy, but TO GET HER is god damm hard\" -AA"
 ];
 
 $randomQuote = $quotes[array_rand($quotes)];
@@ -49,7 +50,7 @@ $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 
     <section>
         <div class="container">
             <div class="content">
-                <img class="content-image" src="health_image/commonSage.jpg" alt="picture" srcset="">
+                <img class="content-image" src="images/commonSage.jpg" alt="picture" srcset="">
                 <div class="content-desk">
                     <h3>Daun Sage</h3>
                     <p>Daun sage umumnya digunakan secara tradisional sebagai obat melawan diabetes. Ekstrak sage
@@ -59,7 +60,7 @@ $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 
             </div>
 
             <div class="content">
-                <img class="content-image" src="health_image/honey.jpg" alt="picture" srcset="">
+                <img class="content-image" src="images/honey.jpg" alt="picture" srcset="">
                 <div class="content-desk">
                     <h3>Madu</h3>
                     <p>Madu adalah makanan kaya antioksidan yang dapat melindungi tubuh dari risiko serangan senyawa
@@ -69,7 +70,7 @@ $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 
             </div>
 
             <div class="content">
-                <img class="content-image" src="health_image/infusedWater.jpg" alt="picture" srcset="">
+                <img class="content-image" src="images/infusedWater.jpg" alt="picture" srcset="">
                 <div class="content-desk">
                     <h3>Infused Water</h3>
                     <p>Minuman sehat ini rendah kalori, tetapi tetap mengandung beragam nutrisi penting, seperti
@@ -87,7 +88,7 @@ $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 
                 <?php while ($result3 = $showAll->fetch_assoc()) { ?>
                     <div class="tb-card">
                         <img class="tb-image" src="health_image/<?php echo $result3['image']; ?>" alt="">
-                        <a href="health.php">
+                        <a href="health_article.php?diss=<?php echo $result3['id']; ?>">
                             <div class="tb-overlay">
                                 <p>
                                     <?php echo $result3['title']; ?>
@@ -212,9 +213,18 @@ $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 
         </div>
     </section>
 
-    <section
-        style="width: 100%; height: auto; display: flex; justify-content: center; align-item: center; margin: 0 0 30px 0;">
-        <?= $randomQuote ?>
+    <section>
+        <div class="dq-container">
+            <div class="dq-card">
+                <div class="dq-close"><i class="ri-close-line"></i></div>
+                <div class="dq-text">
+                    Today Quote is
+                    <p>
+                        <?= $randomQuote ?>
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
@@ -267,5 +277,6 @@ $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 
 
 <script src="js/script.js"></script>
 <script src="js/video.js"></script>
+<script src="js/popup.js"></script>
 
 </html>

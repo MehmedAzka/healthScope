@@ -16,6 +16,7 @@
     padding: 8rem 4rem;
 }
 
+/* === CARD DISCUSSION START */
 .d-card {
     border: 1.5px solid #617A55;
     width: 100%;
@@ -33,7 +34,6 @@
 .d-card:hover {
     transform: scale(1.02);
 }
-
 
 .d-title {
     width: 100%;
@@ -74,6 +74,9 @@
     color: whitesmoke;
 }
 
+/* === CARD DISCUSSION END === */
+
+/* === ADD DISCUSSION START === */
 .d-add {
     width: 100%;
     height: 3rem;
@@ -97,6 +100,9 @@
     position: fixed;
 }
 
+/* === ADD DISCUSSION END === */
+
+/* === DISCUSSIO BOX ADD START === */
 .sec-add-dis {
     display: flex;
     width: 20rem;
@@ -142,3 +148,19 @@
     color: #fff;
     border-radius: 6px;
 }
+/* === DISCUSSIO BOX ADD END === */
+
+/* === NOT FOUND START === */
+.not-found-page {
+    width: 100%;
+    height: 100%;
+    padding: 0 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.not-found-page h1 {
+    color: #00000058;
+}
+/* === NOT FOUND END === */

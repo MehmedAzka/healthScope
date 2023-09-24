@@ -56,6 +56,86 @@
 
 /* === SEARCH END === */
 
+/* === ADD HEALTH START === */
+.add-discussion {
+    width: 11rem;
+    height: 2.4rem;
+    border: none;
+    background-color: #617A55;
+    color: #fff;
+    border-radius: 6px;
+    margin: 0 0 0 20px;
+    z-index: 3;
+}
+
+.sec-add-dis {
+    display: flex;
+    width: 20rem;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #A4D0A4;
+    border-radius: 10px 0 0 10px;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width .2s;
+    z-index: 3;
+}
+
+.sec-add-dis.active {
+    max-width: 20rem;
+}
+
+.sec-add-dis label {
+    margin: 0 0 10px 0;
+}
+
+.sec-add-dis input {
+    width: 90%;
+    padding: 10px 13px;
+    border: 1.5px solid black;
+    border-radius: 20px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    text-transform: none;
+    text-decoration-style: none;
+}
+
+.sec-add-dis textarea {
+    max-width: 90%;
+    min-width: 90%;
+    max-height: 40%;
+    min-height: 40%;
+    padding: 10px 13px;
+    border: 1.5px solid black;
+    border-radius: 20px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    text-transform: none;
+    text-decoration-style: none;
+}
+
+.sec-add-dis textarea::-webkit-scrollbar {
+    width: 0;
+}
+
+.sad-submit {
+    width: 11rem;
+    height: 2.4rem;
+    border: none;
+    background-color: #617A55;
+    color: #fff;
+    border-radius: 6px;
+}
+
+/* === ADD HEALTH END === */
+
 /* === SECTION START === */
 .sec-box {
     padding: 14px 20px 0;
@@ -137,7 +217,7 @@
 .h-text p {
     width: 100%;
     height: 100%;
-    word-break: keep-all;
+    word-break: break-all;
 }
 
 .wtc {
@@ -184,6 +264,44 @@ p.cd {
     color: #00000058;
 }
 
+.h-action {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+button.ri-delete-bin-6-line {
+    border: 1.3px solid red;
+    border-radius: 6px;
+    padding: 3px 10px;
+    color: red;
+    font-size: 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+button.ri-delete-bin-6-line:hover {
+    background-color: red;
+    color: whitesmoke;
+}
+
+button.ri-edit-box-line {
+    border: 1.3px solid sandybrown;
+    border-radius: 6px;
+    padding: 3px 10px;
+    color: sandybrown;
+    font-size: 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+button.ri-edit-box-line:hover {
+    background-color: sandybrown;
+    color: whitesmoke;
+}
+
 /* === CONTENT END === */
 
 /* === DATALIST START */
@@ -214,3 +332,49 @@ datalist option:focus {
 }
 
 /* === DATALIST END */
+
+/* === HEALTH ARTICLE START === */
+.ha-container {
+    width: 100%;
+    height: auto;
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.back-to-start {
+    width: 100%;
+    height: 2rem;
+    margin: 0 0 2rem 0;
+}
+
+.back-to-start a {
+    font-size: 20px;
+    color: #111;
+}
+
+.ha-card {
+    width: 100%;
+    height: auto;
+    padding: 26px;
+    background-image: linear-gradient(to right, #F7E1AE, #FFF8D6);
+    border-radius: 8px;
+}
+
+.ha-title h1 {
+    text-align: left;
+    text-decoration: none;
+    text-transform: capitalize;
+    margin: 0 0 20px 0;
+}
+
+.ha-desc pre {
+    text-decoration: none;
+    white-space: pre-wrap;
+}
+
+.ha-image {
+    width: 15rem;
+}
+
+/* === HEALTH ARTICLE END === */

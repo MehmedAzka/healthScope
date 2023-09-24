@@ -70,21 +70,49 @@ if (isset($_GET['src-box'])) {
                         </option>
                     <?php } ?>
                 </datalist>
+
             </div>
+
+            <div class="d-add">
+                <button class="add-discussion"><i class="ri-add-line"></i> New Discussion</button>
+            </div>
+
+            <form action="function.php" method="post" enctype="multipart/form-data">
+                <div class="sec-add-dis">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" maxlength="30" autocomplete="off" required>
+                    <label for="subtitle">Subtitle</label>
+                    <textarea name="subtitle" id="subtitle" maxlength="5000" autocomplete="off" required></textarea>
+                    <label for="image">Image *Portrait</label>
+                    <input type="file" name="image" id="image" accept="image/*" required>
+                    <button class="sad-submit" type="submit" name="health-submit"><i class="ri-add-line"></i>
+                        Add</button>
+                </div>
+            </form>
+
+            <br>
 
             <?php
             if (($result !== null && $result->num_rows > 0) || ($showAll !== null && $showAll->num_rows > 0)) {
                 // Loop melalui hasil pencarian
                 while ($row = isset($result) ? $result->fetch_assoc() : $showAll->fetch_assoc()) { ?>
                     <div class="h-content">
-                        <a href="#">
+                        <a href="health_article.php?diss=<?php echo $row['id']; ?>">
                             <div class="h-card">
                                 <div class="h-text">
                                     <h2>
                                         <?php echo $row['title']; ?>
                                     </h2>
                                     <p>
-                                        <?php echo $row['subtitle']; ?>
+                                        <?php
+                                        $max_words = 30;
+                                        $data_varchar = $row['subtitle'];
+
+                                        $words = explode(" ", $data_varchar);
+                                        $data_limit = implode(" ", array_slice($words, 0, $max_words));
+
+                                        echo $data_limit;
+                                        ?>, <i>read more...</i>
                                     </p>
                                     <div class="wtc">
                                         <p class="writer">
@@ -99,6 +127,18 @@ if (isset($_GET['src-box'])) {
                                 </div>
                                 <div class="h-image">
                                     <img src="health_image/<?php echo $row['image']; ?>" alt="image">
+                                </div>
+                                <div class="h-action">
+                                    <form action="function.php" method="post">
+                                        <input type="hidden" name="h_content_id" value="<?php echo $row['id'] ?>">
+                                        <button class="ri-delete-bin-6-line" type="submit" name="delete-h-content"
+                                            onclick="return confirm('Are you sure you want to delete this data?')"></button>
+                                    </form>
+                                    <form action="function.php" method="post">
+                                        <input type="hidden" name="h_content_id" value="<?php echo $row['id'] ?>">
+                                        <button class="ri-edit-box-line" type="submit" name="edit-h-content"
+                                            onclick="return confirm('Are you sure you want to edit this data?')"></button>
+                                    </form>
                                 </div>
                             </div>
                         </a>

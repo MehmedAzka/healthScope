@@ -62,14 +62,16 @@ $data = $select('discussion', 'created_date');
                         </div>
                     <?php }
                 } else { ?>
-                NOT FOUND
+                <div class="not-found-page">
+                    <h1>Not Found</h1>
+                </div>
                 <?php } ?>
             </div>
 
             <form action="function.php" method="post">
                 <div class="sec-add-dis">
                     <label for="diss">Your Discussion</label>
-                    <input type="text" name="diss" id="diss" maxlength="100" autocomplete="off">
+                    <input type="text" name="diss" id="diss" maxlength="100" autocomplete="off" required>
                     <button class="sad-submit" type="submit" name="diss-submit"><i class="ri-add-line"></i> Add</button>
                 </div>
             </form>
