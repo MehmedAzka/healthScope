@@ -97,7 +97,7 @@ if (isset($_GET['src-box'])) {
                 // Loop melalui hasil pencarian
                 while ($row = isset($result) ? $result->fetch_assoc() : $showAll->fetch_assoc()) { ?>
                     <div class="h-content">
-                        <a href="health_article.php?diss=<?php echo $row['id']; ?>">
+                        <a href="health_article.php?article=<?php echo $row['id']; ?>">
                             <div class="h-card">
                                 <div class="h-text">
                                     <h2>
@@ -120,26 +120,27 @@ if (isset($_GET['src-box'])) {
                                                 <?php echo $row['created_by']; ?>
                                             </i>
                                         </p>
-                                        <p class="cd">
+                                        <!-- <p class="cd">
                                             <?php echo $row['created_date']; ?>
-                                        </p>
+                                        </p> -->
+                                        <div class="h-action">
+                                            <form action="function.php" method="post">
+                                                <input type="hidden" name="h_content_id" value="<?php echo $row['id'] ?>">
+                                                <button class="ri-delete-bin-6-line" type="submit" name="delete-h-content"
+                                                    onclick="return confirm('Are you sure you want to delete this data?')"></button>
+                                            </form>
+                                            <form action="function.php" method="post">
+                                                <input type="hidden" name="h_content_id" value="<?php echo $row['id'] ?>">
+                                                <button class="ri-edit-box-line" type="submit" name="edit-h-content"
+                                                    onclick="return confirm('Are you sure you want to edit this data?')"></button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="h-image">
                                     <img src="health_image/<?php echo $row['image']; ?>" alt="image">
                                 </div>
-                                <div class="h-action">
-                                    <form action="function.php" method="post">
-                                        <input type="hidden" name="h_content_id" value="<?php echo $row['id'] ?>">
-                                        <button class="ri-delete-bin-6-line" type="submit" name="delete-h-content"
-                                            onclick="return confirm('Are you sure you want to delete this data?')"></button>
-                                    </form>
-                                    <form action="function.php" method="post">
-                                        <input type="hidden" name="h_content_id" value="<?php echo $row['id'] ?>">
-                                        <button class="ri-edit-box-line" type="submit" name="edit-h-content"
-                                            onclick="return confirm('Are you sure you want to edit this data?')"></button>
-                                    </form>
-                                </div>
+
                             </div>
                         </a>
                     </div>

@@ -47,24 +47,26 @@ $data = $select('discussion', 'created_date');
                 <?php if (mysqli_num_rows($data) > 0) {
                     while ($result = $data->fetch_assoc()) { ?>
                         <div class="d-card">
-                            <div class="d-title">
-                                <p>
-                                    <?php echo $result['title'] ?>
-                                </p>
-                            </div>
-                            <div class="d-footer">
-                                <form action="function.php" method="post">
-                                    <input type="hidden" name="id_to_delete" value="<?php echo $result['id'] ?>">
-                                    <button class="ri-delete-bin-6-line" type="submit" name="delete-submit"
-                                        onclick="return confirm('Are you sure you want to delete this data?')"></button>
-                                </form>
-                            </div>
+                            <a href="discussion_page.php?forum=<?php echo $result['id'] ?>">
+                                <div class="d-title">
+                                    <p>
+                                        <?php echo $result['title'] ?>
+                                    </p>
+                                </div>
+                                <div class="d-footer">
+                                    <form action="function.php" method="post">
+                                        <input type="hidden" name="id_to_delete" value="<?php echo $result['id'] ?>">
+                                        <button class="ri-delete-bin-6-line" type="submit" name="delete-submit"
+                                            onclick="return confirm('Are you sure you want to delete this data?')"></button>
+                                    </form>
+                                </div>
+                            </a>
                         </div>
                     <?php }
                 } else { ?>
-                <div class="not-found-page">
-                    <h1>Not Found</h1>
-                </div>
+                    <div class="not-found-page">
+                        <h1>Not Found</h1>
+                    </div>
                 <?php } ?>
             </div>
 

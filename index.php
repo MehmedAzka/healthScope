@@ -14,6 +14,12 @@ $quotes = [
 $randomQuote = $quotes[array_rand($quotes)];
 
 $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 4");
+
+// $arrayData = $showAll->fetch_assoc();
+// unset($arrayData['subtitle']);
+// print_r(json_encode($arrayData['id']), json_encode($arrayData['title']));
+// // return json_encode($arrayData);
+// die;
 ?>
 
 <!DOCTYPE html>
@@ -88,7 +94,7 @@ $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 
                 <?php while ($result3 = $showAll->fetch_assoc()) { ?>
                     <div class="tb-card">
                         <img class="tb-image" src="health_image/<?php echo $result3['image']; ?>" alt="">
-                        <a href="health_article.php?diss=<?php echo $result3['id']; ?>">
+                        <a href="health_article.php?article=<?php echo $result3['id']; ?>">
                             <div class="tb-overlay">
                                 <p>
                                     <?php echo $result3['title']; ?>

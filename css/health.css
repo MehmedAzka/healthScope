@@ -83,7 +83,7 @@
     max-width: 0;
     overflow: hidden;
     transition: max-width .2s;
-    z-index: 3;
+    z-index: 4;
 }
 
 .sec-add-dis.active {
@@ -119,6 +119,7 @@
     text-decoration: none;
     text-transform: none;
     text-decoration-style: none;
+    text-indent: none;
 }
 
 .sec-add-dis textarea::-webkit-scrollbar {
@@ -189,7 +190,7 @@
 }
 
 .h-content a:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
 .h-card {
@@ -267,7 +268,7 @@ p.cd {
 .h-action {
     height: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 button.ri-delete-bin-6-line {
@@ -276,7 +277,7 @@ button.ri-delete-bin-6-line {
     padding: 3px 10px;
     color: red;
     font-size: 20px;
-    margin-bottom: 5px;
+    margin-right: 5px;
     cursor: pointer;
     transition: .2s ease;
 }
@@ -292,7 +293,7 @@ button.ri-edit-box-line {
     padding: 3px 10px;
     color: sandybrown;
     font-size: 20px;
-    margin-bottom: 5px;
+    margin-right: 5px;
     cursor: pointer;
     transition: .2s ease;
 }

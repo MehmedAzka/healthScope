@@ -1,7 +1,7 @@
 <?php
 include "function.php";
 
-$id = $_GET['diss'];
+$id = $_GET['article'];
 
 $data = $find('h_topic', $id);
 ?>

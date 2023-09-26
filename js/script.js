@@ -20,6 +20,7 @@ addDiscussionButton.addEventListener("click", function () {
         secAddDis.classList.remove("active");
     }
 });
+
 // const showMenu = (toggleId, navId) => {
 //     const toggle = document.getElementById(toggleId),
 //         nav = document.getElementById(navId)
