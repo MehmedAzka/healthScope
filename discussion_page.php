@@ -41,7 +41,7 @@ $show = $conn->query("SELECT * FROM comment WHERE commented = '$id' ORDER BY cre
                 <div class="dp-comment">
                     <div class="dp-comment-user">
                         <h4>
-                            <?php echo $row['name'] ?>
+                            <?php echo $row['username'] ?>
                         </h4>
                         <form action="function.php" method="post">
                             <input type="hidden" name="forum" value="<?= $id ?>">

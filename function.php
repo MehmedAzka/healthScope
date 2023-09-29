@@ -1,5 +1,84 @@
 <?php
 require "connection.php";
+session_start();
+
+// REGISTER
+if (isset($_POST['regis-user'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+
+    // Pengecekan konfirmasi kata sandi
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confirm-password'];
+
+    if ($password !== $confirmPassword) {
+        echo "<script>alert('Konfirmasi kata sandi tidak cocok!');</script>";
+    } else {
+        $split = explode('.', $_FILES['photo']['name']);
+        $extention = $split[count($split) - 1];
+
+        $photo = $username . '.' . $extention;
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        $role = $_POST['role'];
+
+        $dir = "user_pp/";
+        $tmpFile = $_FILES['photo']['tmp_name'];
+
+        move_uploaded_file($tmpFile, $dir . $photo);
+
+        $sqlTake = $conn->query("SELECT * FROM user WHERE email='$email' OR username='$username'");
+
+        if (mysqli_num_rows($sqlTake) > 0) {
+            echo "<script>alert('Username atau email sudah terdaftar!');</script>";
+            header("location: index.php");
+        } else {
+            $sql = "INSERT INTO user (username, email, pass, photo, role) VALUES ('$username', '$email', '$passwordHash', '$photo', '$role')";
+
+            if (mysqli_query($conn, $sql)) {
+                echo "<script>alert('You have registered!');</script>";
+                header("location: index.php");
+                exit();
+            } else {
+                $_SESSION['error'] = "Terjadi kesalahan. Silakan coba lagi!";
+            }
+        }
+    }
+}
+
+// LOGIN
+if (isset($_POST['login-user'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql = $conn->query("SELECT * FROM user WHERE username = '$username'");
+
+
+    if (mysqli_num_rows($sql) == 1) {
+        $row = mysqli_fetch_assoc($sql);
+        if (password_verify($password, $row['pass'])) {
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['photo'] = $row['photo'];
+            $_SESSION['role'] = $row['role'];
+
+            if ($_SESSION['role'] == 'user') {
+                header("location: home.php");
+                exit();
+            } elseif ($_SESSION['role'] == 'admin') {
+                header("location: home.php");
+                exit();
+            }
+        } else {
+            $_SESSION['error'] = "<script>alert('Wrong username or email!');</script>";
+            header("location: index.php");
+            exit();
+        }
+    } else {
+        $_SESSION['error'] = "<script>alert('Not found username or email!');</script>";
+        header("location: index.php");
+        exit();
+    }
+}
 
 // READ DATA #DISCUSSION
 $select = function ($tabel, $order) use ($conn) {
@@ -50,7 +129,7 @@ $deleteImage = function ($tabel, $id, $imageField, $imageDir) use ($conn) {
     if (!empty($image) && file_exists($imageDir . $image)) {
         unlink($imageDir . $image);
     }
-    
+
     $query = "DELETE FROM $tabel WHERE id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("i", $id);
@@ -60,17 +139,17 @@ $deleteImage = function ($tabel, $id, $imageField, $imageDir) use ($conn) {
     return $result;
 };
 
-// COMMENT ADD AND DELETE COMMENT
+// COMMENT ADD
 if (isset($_POST['dp-submit'])) {
     $des = $_GET['forum'];
 
-    $name = 1;
+    $name = $_SESSION['username'];
     $comment = htmlspecialchars($_POST['dp-input']);
     $commented = $des;
     $date = date('Y-m-d H:i:s');
 
     $data_to_insert = array(
-        'name' => $name,
+        'username' => $name,
         'comment' => $comment,
         'commented' => $commented,
         'created_date' => $date
@@ -85,6 +164,7 @@ if (isset($_POST['dp-submit'])) {
     }
 }
 
+// DELETE COMMENT
 if (isset($_POST['delete-c-content'])) {
     $des = $_POST['forum'];
 
@@ -123,7 +203,7 @@ if (isset($_POST['diss-submit'])) {
 }
 
 
-//#DISCUSSION
+// DISCUSSION
 if (isset($_POST['delete-submit'])) {
     $id_to_delete = $_POST['id_to_delete'];
 
@@ -178,6 +258,7 @@ if (isset($_POST['health-submit'])) {
     }
 }
 
+// DELETE HEALTH CONTENT
 if (isset($_POST['delete-h-content'])) {
     $id_to_delete = $_POST['h_content_id'];
 

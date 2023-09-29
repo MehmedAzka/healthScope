@@ -1,5 +1,6 @@
 <?php
-include "connection.php";
+include "function.php";
+
 
 $result = null;
 $showAll = null;
@@ -37,13 +38,13 @@ if (isset($_GET['src-box'])) {
     <nav>
         <div class="nav-content">
             <div class="logo">
-                <a href="index.php">HEALTHSCOPE</a>
+                <a href="home.php">HEALTHSCOPE</a>
                 <span class="hamburger none" onclick="toggle()">
                     <i id="bars" class="ri-menu-line"></i>
                 </span>
             </div>
             <ul class="nav-links">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="home.php">Home</a></li>
                 <li><a class="active" href="health.php">Health</a></li>
                 <li><a href="plan.php">Plan</a></li>
                 <li><a href="discussion.php">Discussion</a></li>
@@ -74,7 +75,7 @@ if (isset($_GET['src-box'])) {
             </div>
 
             <div class="d-add">
-                <button class="add-discussion"><i class="ri-add-line"></i> New Discussion</button>
+                <button class="add-discussion"><i class="ri-add-line"></i> New Article</button>
             </div>
 
             <form action="function.php" method="post" enctype="multipart/form-data">

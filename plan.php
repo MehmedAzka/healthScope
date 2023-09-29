@@ -15,13 +15,13 @@
     <nav>
         <div class="nav-content">
             <div class="logo">
-                <a href="index.php">HEALTHSCOPE</a>
+                <a href="home.php">HEALTHSCOPE</a>
                 <span class="hamburger none" onclick="toggle()">
                     <i id="bars" class="ri-menu-line"></i>
                 </span>
             </div>
             <ul class="nav-links">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="home.php">Home</a></li>
                 <li><a href="health.php">Health</a></li>
                 <li><a class="active" href="plan.php">Plan</a></li>
                 <li><a href="discussion.php">Discussion</a></li>
