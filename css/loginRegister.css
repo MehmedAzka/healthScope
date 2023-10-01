@@ -18,8 +18,8 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .signup input {
@@ -30,7 +30,7 @@ body {
 }
 
 .signup img {
-    margin-left: 80px;
+  margin-left: 80px;
   margin-bottom: 20px;
 }
 

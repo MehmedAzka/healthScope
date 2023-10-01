@@ -18,6 +18,9 @@ $quotes = [
 
 $randomQuote = $quotes[array_rand($quotes)];
 $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 4");
+
+$username = $_SESSION['username'];
+$photo = $_SESSION['photo'];
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +39,7 @@ $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 
     <nav>
         <div class="nav-content">
             <div class="logo">
-                <a href="home.php">HEALTHSCOPE</a>
+                <a href="home.php"><img src="images/healthScope.png" alt=""></a>
                 <span class="hamburger none" onclick="toggle()">
                     <i id="bars" class="ri-menu-line"></i>
                 </span>
@@ -49,6 +52,10 @@ $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 
                 <li><a href="#">Service</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
+            <div class="user-profile">
+                <span class="user-name"><?= $username ?></span>
+                <img src="user_pp/<?= $photo ?>" alt="" class="user-pp">
+            </div>
         </div>
     </nav>
 
