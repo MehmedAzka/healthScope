@@ -223,7 +223,7 @@ $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 
             <div class="dq-card">
                 <div class="dq-close"><i class="ri-close-line"></i></div>
                 <div class="dq-text">
-                    Today Quote is
+                    <h1>Today Quote is</h1>
                     <p>
                         <?= $randomQuote ?>
                     </p>
