@@ -65,7 +65,7 @@ $data = $select('discussion', 'created_date');
                     <?php }
                 } else { ?>
                     <div class="not-found-page">
-                        <h1>Nott Found</h1>
+                        <h1>Not Found</h1>
                     </div>
                 <?php } ?>
             </div>
