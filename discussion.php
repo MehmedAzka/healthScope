@@ -2,7 +2,6 @@
 include "function.php";
 
 $data = $select('discussion', 'created_date');
-
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +32,7 @@ $data = $select('discussion', 'created_date');
                 <li><a href="plan.php">Plan</a></li>
                 <li><a class="active" href="discussion.php">Discussion</a></li>
                 <li><a href="#">Service</a></li>
+                <li><a href="logout.php">Logout</a></li>
             </ul>
         </div>
     </nav>

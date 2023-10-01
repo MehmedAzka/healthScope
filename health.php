@@ -49,6 +49,7 @@ if (isset($_GET['src-box'])) {
                 <li><a href="plan.php">Plan</a></li>
                 <li><a href="discussion.php">Discussion</a></li>
                 <li><a href="#">Service</a></li>
+                <li><a href="logout.php">Logout</a></li>
             </ul>
         </div>
     </nav>
