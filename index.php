@@ -23,41 +23,66 @@ include "function.php";
         <?php unset($_SESSION['error']); ?>
     <?php } ?>
 
-    <!-- Register -->
-    <p>Sign Up</p>
-    <form action="function.php" method="post" enctype="multipart/form-data">
-        <label for="username">Username</label>
-        <input id="username" type="text" maxlength="225" autocomplete="off" name="username" required>
+    <div class="container">
+        <!-- Register -->
+        <div class="signup">
+            <img src="images/logo-1.png" alt="">
+            <form action="function.php" method="post" enctype="multipart/form-data">
+                <input id="username" placeholder="Username" type="text" maxlength="225" autocomplete="off" name="username" required>
 
-        <label for="email">Email</label>
-        <input id="email" type="email" maxlength="225" autocomplete="off" name="email" required>
+                <input id="email" placeholder="Email" type="email" maxlength="225" autocomplete="off" name="email" required>
 
-        <label for="password">Password</label>
-        <input id="password" type="password" maxlength="225" autocomplete="off" name="password" required>
+                <input id="password" placeholder="Password" type="password" maxlength="225" autocomplete="off" name="password" required>
 
-        <label for="confirm-password">Confirm Password</label>
-        <input id="confirm-password" type="password" maxlength="225" autocomplete="off" name="confirm-password"
-            required>
+                <input id="confirm-password" placeholder="Confirm Password" type="password" maxlength="225" autocomplete="off" name="confirm-password" required>
 
-        <label for="photo">Photo Profile</label>
-        <input id="photo" type="file" maxlength="225" autocomplete="off" name="photo">
+                <input type="hidden" value="user" name="role">
 
-        <input type="hidden" value="user" name="role">
+                <button type="submit" value="Submit" name="regis-user">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="toggleForm('login')">Login</a></p>
+        </div>
 
-        <input type="submit" value="Submit" name="regis-user">
-    </form>
 
-    <!-- Login -->
-    <p>Login</p>
-    <form action="function.php" method="post">
-        <label for="username">Username</label>
-        <input id="username" type="text" maxlength="225" autocomplete="off" name="username" required>
+        <!-- Login -->
+        <div class="login">
+            <img src="images/logo-1.png" alt="">
+            <form action="function.php" method="post">
 
-        <label for="password">Password</label>
-        <input id="password" type="password" maxlength="225" autocomplete="off" name="password" required>
+                <input id="username" placeholder="Username" type="text" maxlength="225" autocomplete="off" name="username" required>
 
-        <input type="submit" value="Submit" name="login-user">
-    </form>
+                <input id="password" placeholder="Password" type="password" maxlength="225" autocomplete="off" name="password" required>
+
+                <button type="submit" value="Submit" name="login-user">Login</button>
+                <p>Don't have an account? <a href="#" onclick="toggleForm('signup')">Sign Up</a></p>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleForm(formToShow) {
+            const loginForm = document.querySelector('.login');
+            const signupForm = document.querySelector('.signup');
+
+            if (formToShow === 'login') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            } else if (formToShow === 'signup') {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            }
+        }
+
+        // Sembunyikan form registrasi dan tampilkan form login saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.querySelector('.login');
+            const signupForm = document.querySelector('.signup');
+
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+        });
+    </script>
 </body>
 
 </html>
