@@ -205,45 +205,59 @@ h2.profile {
 .dp-container {
     width: 100%;
     height: auto;
-    padding: 4rem 3rem 7rem;
+    padding: 2rem 7rem 7rem;
     display: flex;
     flex-direction: column;
 }
 
-.back-to-start {
+.dp-start {
     width: 100%;
+    height: 7rem;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding: 3rem 0 0 0;
+}
+
+.back-to-start {
+    position: fixed;
+    left: 4rem;
+    top: 3rem;
+    width: auto;
     height: 2rem;
-    margin: 0 0 2rem 0;
+    border-radius: 39px;
+    border: 2px solid #37BD6B;
+    background: #fff;
+    display: inline-flex;
+    padding: 7px 10px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.13);
+    z-index: 2;
 }
 
 .back-to-start a {
-    font-size: 20px;
+    font-size: 15px;
     color: #111;
 }
 
-.dp-card {
+.dp-profile {
     width: 100%;
     height: auto;
-    padding: 26px;
-    background-image: linear-gradient(to right, #F7E1AE, #FFF8D6);
-    border-radius: 8px;
-    margin: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.dp-title h1 {
-    text-align: left;
-    text-decoration: none;
-    text-transform: capitalize;
-    margin: 0 0 20px 0;
+.dp-username {
+    margin: 0 0 10px 0;
 }
 
 .dp-comment {
     width: 100%;
     height: auto;
-    border: 1.5px solid #111;
-    border-radius: 0 30px 30px 30px;
     margin: 0 0 20px 0;
-    padding: 15px 26px;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -254,12 +268,17 @@ h2.profile {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 0 0 0 5px;
 }
 
 .dp-comment-text {
     width: 100%;
     height: auto;
     margin: 0 0 10px 0;
+    padding: 10px;
+    border: 2px solid #37BD6B;
+    border-radius: 18px;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.13);
 }
 
 .dp-comment-text pre {
@@ -304,7 +323,7 @@ h2.profile {
     max-height: 2.5rem;
     min-height: 2.5rem;
     margin: 0 10px 0 0;
-    padding: 10px 13px;
+    padding: 10px 2.5rem 10px 13px;
     border: 1.5px solid black;
     border-radius: 20px;
     font-size: 15px;
@@ -318,18 +337,21 @@ h2.profile {
 }
 
 .dp-button {
-    width: 38px;
-    height: 38px;
-    border: 1.5px solid black;
-    border-radius: 20px;
-    background-color: #fff;
+    position: absolute;
+    top: 20%;
+    right: 26%;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: none;
+    /* color: #37BD6B; */
     font-size: 20px;
 }
 
 button.ri-delete-bin-6-line {
-    border: 1.3px solid red;
-    border-radius: 6px;
-    padding: 3px 10px;
+    border: none;
+    /* border-radius: 6px; */
+    /* padding: 3px 10px; */
     color: red;
     font-size: 20px;
     margin-right: 5px;
@@ -338,8 +360,7 @@ button.ri-delete-bin-6-line {
 }
 
 button.ri-delete-bin-6-line:hover {
-    background-color: red;
-    color: whitesmoke;
+    transform: scale(1.1);
 }
 
 /* === FORUM END === */

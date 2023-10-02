@@ -184,7 +184,7 @@ if (isset($_POST['delete-c-content'])) {
 // FUNCTION TO ADD DISCUSSION DATA
 if (isset($_POST['diss-submit'])) {
     $diss = htmlspecialchars($_POST['diss']);
-    $created_by = 1;
+    $created_by = $_SESSION['id'];
     $date = date('Y-m-d');
 
     $data_to_insert = array(
@@ -223,7 +223,7 @@ if (isset($_POST['delete-submit'])) {
 if (isset($_POST['health-submit'])) {
     $title = htmlspecialchars($_POST['title']);
     $subtitle = htmlspecialchars($_POST['subtitle']);
-    $created_by = 1;
+    $created_by = $_SESSION['id'];
     $date = date('Y-m-d H:i:s');
 
     if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {

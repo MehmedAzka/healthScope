@@ -57,7 +57,7 @@ $photo = $_SESSION['photo'];
                         <div class="d-card">
                             <a href="discussion_page.php?forum=<?php echo $result['id'] ?>">
                                 <div class="d-profile">
-                                    <h2 class="profile">AdminHS</h2>
+                                    <h2 class="profile"><?php echo $result['created_by'] ?></h2>
                                 </div>
                                 <div class="d-title">
                                     <p>

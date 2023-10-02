@@ -5,7 +5,6 @@ $id = $_GET['forum'];
 $data = $find('discussion', $id);
 
 $show = $conn->query("SELECT * FROM comment WHERE commented = '$id' ORDER BY created_date DESC");
-
 ?>
 
 <!DOCTYPE html>
@@ -22,20 +21,26 @@ $show = $conn->query("SELECT * FROM comment WHERE commented = '$id' ORDER BY cre
 </head>
 
 <body>
-    <div class="dp-container">
+    <div class="dp-start">
         <div class="back-to-start">
-            <a href="discussion.php"><i class="ri-arrow-left-line"></i> Back To Page</a>
+            <a href="discussion.php"><i class="ri-arrow-left-s-line"></i> BACK</a>
         </div>
-        <div class="dp-card">
-            <?php while ($result = $data->fetch_assoc()) { ?>
-                <div class="dp-title">
-                    <h1>
-                        <?= $result['title']; ?> <br>
-                    </h1>
+        <?php while ($result = $data->fetch_assoc()) { ?>
+            <div class="dp-profile">
+                <div class="dp-username">
+                    <h2>
+                        <?= $result['created_by']; ?> <br>
+                    </h2>
                 </div>
-            <?php } ?>
-        </div>
-
+                <div class="dp-dis-topic">
+                    <p>
+                        <?= $result['title']; ?> <br>
+                    </p>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+    <div class="dp-container">
         <?php if (mysqli_num_rows($show) > 0) {
             while ($row = $show->fetch_assoc()) { ?>
                 <div class="dp-comment">
