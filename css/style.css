@@ -13,6 +13,40 @@ body {
 }
 
 /* === NAV START === */
+.user-profile {
+    width: auto;
+    padding: 6px 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .3s ease;
+    cursor: pointer;
+}
+
+.user-profile:hover {
+    background-color: #37BD6B;
+}
+
+.user-profile .user-name {
+    color: #252525;
+    text-align: center;
+    /* font-family: Poppins; */
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0 10px 0 0;
+}
+
+.user-profile .user-pp {
+    min-width: 37px;
+    min-height: 37px;
+    object-fit: cover;
+    border-radius: 50px;
+    border: 1px solid #111;
+}
+
 nav {
     position: fixed;
     top: 0;
@@ -20,13 +54,15 @@ nav {
     width: 100%;
     padding: 20px;
     transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(13deg, rgba(225, 225, 225, 0.1), rgba(225, 225, 225, 0));
+    -webkit-backdrop-filter: blur(10px);
     z-index: 5;
 }
 
 nav.sticky {
-    padding: 15px 20px;
-    background: #617A55;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
 }
 
 nav .nav-content {
@@ -48,6 +84,10 @@ nav .logo {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+nav .logo img {
+    width: 100px;
 }
 
 nav.sticky .logo a {
@@ -78,11 +118,6 @@ nav.sticky .logo a:hover {
 .nav-links li a:hover {
     color: #617A55;
     transition: all 0.3s ease;
-}
-
-nav.sticky .nav-links li a {
-    color: #fff;
-    transition: all 0.4s ease;
 }
 
 nav.sticky .nav-links li a:hover {
@@ -705,10 +740,19 @@ footer a:hover {
 
 .dp-text h1 {
     font-size: 40px;
+<<<<<<< HEAD
+}
+
+.dq-text p {
+    margin: 30px 0 0 0;
+    font-size: 25px;
+=======
+>>>>>>> sub-main
 }
 
 .dq-text p {
     margin: 30px 0 0 0;
     font-size: 25px;
 }
+
 /* === DAILY QUOTE END === */
