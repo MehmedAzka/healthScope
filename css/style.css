@@ -116,7 +116,7 @@ nav.sticky .logo a:hover {
 }
 
 .nav-links li a:hover {
-    color: #617A55;
+    color: #37BD6B;
     transition: all 0.3s ease;
 }
 
@@ -151,7 +151,7 @@ nav.sticky .nav-links li a:hover {
 }
 
 .nav-links .active {
-    color: #617A55;
+    color: #37BD6B;
 }
 
 /* === NAV END === */
