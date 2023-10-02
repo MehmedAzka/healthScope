@@ -72,7 +72,7 @@ $show = $conn->query("SELECT * FROM comment WHERE commented = '$id' ORDER BY cre
 
     <form method="post">
         <div class="dp-input-box">
-            <textarea class="dp-input" type="text" name="dp-input" required></textarea>
+            <textarea class="dp-input" type="text" name="dp-input" placeholder="type something..." required></textarea>
             <button class="dp-button" type="submit" name="dp-submit"><i class="ri-send-plane-2-fill"></i></button>
         </div>
     </form>

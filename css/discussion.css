@@ -19,9 +19,9 @@
 /* === CARD DISCUSSION START */
 .d-card {
     width: 100%;
-    border: 1.5px solid #617A55;
+    border: 1.5px solid #37BD6B;
     height: auto;
-    border-radius: 6px;
+    border-radius: 24px;
     transition: .2s ease;
     margin: 0 0 15px 0;
 }
@@ -39,12 +39,25 @@
     transform: scale(1.01);
 }
 
+.d-profile {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+h2.profile {
+    color: #111;
+}
+
 .d-title {
     width: 100%;
     height: auto;
     display: flex;
     align-items: start;
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
 }
 
 .d-title p {
@@ -63,8 +76,13 @@
 }
 
 .d-footer button.ri-delete-bin-6-line {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1.3px solid red;
-    border-radius: 6px;
+    border-radius: 9px;
     padding: 3px 10px;
     /* width: 30px; */
     color: red;
@@ -94,9 +112,10 @@
     width: 11rem;
     height: 2.4rem;
     border: none;
-    background-color: #617A55;
+    background-color: #37BD6B;
     color: #fff;
-    border-radius: 6px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.13);
     z-index: 3;
 }
 
@@ -107,25 +126,34 @@
 /* === ADD DISCUSSION END === */
 
 /* === DISCUSSIO BOX ADD START === */
-.sec-add-dis {
-    display: flex;
-    width: 20rem;
-    height: 100%;
+.sec-add-dis-void {
+    width: 100%;
+    height: 100vh;
     position: fixed;
     top: 0;
     right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000058;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .2s;
+}
+
+.sec-add-dis-void.active {
+    max-height: 100%;
+}
+
+.sec-add-dis {
+    width: 50%;
+    height: 30vh;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #A4D0A4;
+    background-color: #FFF;
     border-radius: 10px 0 0 10px;
-    max-width: 0;
-    overflow: hidden;
-    transition: max-width .2s;
-}
-
-.sec-add-dis.active {
-    max-width: 20rem;
 }
 
 .sec-add-dis label {
@@ -135,22 +163,24 @@
 .sec-add-dis input {
     width: 90%;
     padding: 10px 13px;
-    border: 1.5px solid black;
-    border-radius: 20px;
+    border: 3px solid #37BD6B;
+    border-radius: 50px;
     font-size: 15px;
     margin-bottom: 10px;
     text-decoration: none;
     text-transform: none;
     text-decoration-style: none;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.13);
 }
 
 .sad-submit {
     width: 11rem;
     height: 2.4rem;
     border: none;
-    background-color: #617A55;
+    background-color: #37BD6B;
     color: #fff;
-    border-radius: 6px;
+    border-radius: 50px;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.13);
 }
 
 /* === DISCUSSIO BOX ADD END === */
@@ -265,7 +295,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #A4D0A4;
+    background-color: #37BD6B;
 }
 
 .dp-input {
@@ -311,4 +341,5 @@ button.ri-delete-bin-6-line:hover {
     background-color: red;
     color: whitesmoke;
 }
+
 /* === FORUM END === */

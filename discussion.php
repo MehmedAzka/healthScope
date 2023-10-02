@@ -21,7 +21,7 @@ $photo = $_SESSION['photo'];
 </head>
 
 <body>
-<nav>
+    <nav>
         <div class="nav-content">
             <div class="logo">
                 <a href="home.php"><img src="images/healthScope.png" alt=""></a>
@@ -37,7 +37,9 @@ $photo = $_SESSION['photo'];
                 <li><a href="logout.php">Logout</a></li>
             </ul>
             <div class="user-profile">
-                <span class="user-name"><?= $username ?></span>
+                <span class="user-name">
+                    <?= $username ?>
+                </span>
                 <img src="user_pp/<?= $photo ?>" alt="" class="user-pp">
             </div>
         </div>
@@ -54,6 +56,9 @@ $photo = $_SESSION['photo'];
                     while ($result = $data->fetch_assoc()) { ?>
                         <div class="d-card">
                             <a href="discussion_page.php?forum=<?php echo $result['id'] ?>">
+                                <div class="d-profile">
+                                    <h2 class="profile">AdminHS</h2>
+                                </div>
                                 <div class="d-title">
                                     <p>
                                         <?php echo $result['title'] ?>
@@ -77,10 +82,13 @@ $photo = $_SESSION['photo'];
             </div>
 
             <form action="function.php" method="post">
-                <div class="sec-add-dis">
-                    <label for="diss">Your Discussion</label>
-                    <input type="text" name="diss" id="diss" maxlength="100" autocomplete="off" required>
-                    <button class="sad-submit" type="submit" name="diss-submit"><i class="ri-add-line"></i> Add</button>
+                <div class="sec-add-dis-void">
+                    <div class="sec-add-dis">
+                        <label for="diss">Your Discussion</label>
+                        <input type="text" name="diss" id="diss" maxlength="100" autocomplete="off" required>
+                        <button class="sad-submit" type="submit" name="diss-submit"><i class="ri-add-line"></i>
+                            Add</button>
+                    </div>
                 </div>
             </form>
         </div>
