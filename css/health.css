@@ -6,7 +6,7 @@
     align-items: start;
     justify-content: start;
     flex-direction: column;
-    padding: 10rem 0 40px 0;
+    padding: 12rem 4rem 40px;
 }
 
 .health-component-begin {
@@ -23,16 +23,17 @@
 
 /* === SEARCH START === */
 .src-box {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: start;
-    margin: 0 0 30px 0;
+    justify-content: center;
+    margin: 0 0 15px 0;
 }
 
 .src-search {
-    width: 80%;
+    width: 50%;
     padding: 10px 13px;
-    border: 1.5px solid black;
+    border: 2px solid #37BD6B;
     border-radius: 20px;
     font-size: 15px;
     margin: 0 10px 0 20px;
@@ -42,11 +43,12 @@
 }
 
 .src-button {
-    width: 38px;
-    height: 38px;
-    border: 1.5px solid black;
-    border-radius: 20px;
-    background-color: #0000;
+    position: absolute;
+    right: 25%;
+    width: 27px;
+    height: 27px;
+    border: none;
+    background: none;
     font-size: 20px;
 }
 
@@ -58,36 +60,56 @@
 
 /* === ADD HEALTH START === */
 .add-discussion {
+    position: fixed;
+    top: 9.5rem;
+    left: 4rem;
     width: 11rem;
     height: 2.4rem;
     border: none;
-    background-color: #617A55;
+    background-color: #37BD6B;
     color: #fff;
-    border-radius: 6px;
-    margin: 0 0 0 20px;
-    z-index: 3;
+    border-radius: 15px;
+    z-index: 6;
 }
 
-.sec-add-dis {
-    display: flex;
-    width: 20rem;
-    height: 100%;
+.sec-add-dis-void {
+    width: 100%;
+    height: 100vh;
     position: fixed;
     top: 0;
     right: 0;
-    flex-direction: column;
+    display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #A4D0A4;
-    border-radius: 10px 0 0 10px;
-    max-width: 0;
+    background-color: #00000058;
+    max-height: 0;
     overflow: hidden;
-    transition: max-width .2s;
-    z-index: 4;
+    transition: max-height .4s;
+    z-index: 5;
 }
 
-.sec-add-dis.active {
-    max-width: 20rem;
+.sec-add-dis-void.active {
+    max-height: 100%;
+}
+
+.sec-add-dis {
+    width: 60%;
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+
+.left, .right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 3%;
 }
 
 .sec-add-dis label {
@@ -95,9 +117,9 @@
 }
 
 .sec-add-dis input {
-    width: 90%;
+    width: 100%;
     padding: 10px 13px;
-    border: 1.5px solid black;
+    border: 2px solid #37BD6B;
     border-radius: 20px;
     font-size: 15px;
     margin-bottom: 10px;
@@ -106,13 +128,17 @@
     text-decoration-style: none;
 }
 
+.sec-add-dis input[type=file] {
+    height: 100%;
+}
+
 .sec-add-dis textarea {
-    max-width: 90%;
-    min-width: 90%;
-    max-height: 40%;
-    min-height: 40%;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 73%;
+    min-height: 73%;
     padding: 10px 13px;
-    border: 1.5px solid black;
+    border: 2px solid #37BD6B;
     border-radius: 20px;
     font-size: 15px;
     margin-bottom: 10px;
@@ -127,12 +153,12 @@
 }
 
 .sad-submit {
-    width: 11rem;
+    width: 100%;
     height: 2.4rem;
     border: none;
-    background-color: #617A55;
+    background-color: #37BD6B;
     color: #fff;
-    border-radius: 6px;
+    border-radius: 50px;
 }
 
 /* === ADD HEALTH END === */
@@ -181,8 +207,12 @@
     display: flex;
     align-items: center;
     justify-content: start;
-    padding: 0 20px;
     margin: 0 0 20px 0;
+}
+
+.h-content a {
+    width: 100%;
+
 }
 
 .h-content a {
@@ -197,7 +227,7 @@
     width: 100%;
     height: 100%;
     border: 1.5px solid #A4D0A4;
-    border-radius: 6px;
+    border-radius: 24px;
     display: flex;
     justify-content: space-between;
     align-items: start;
@@ -205,7 +235,7 @@
 }
 
 .h-text {
-    max-width: 85%;
+    width: 100%;
     height: 100%;
     padding: 15px;
 }
@@ -242,14 +272,14 @@ p.cd {
     height: 100%;
     display: flex;
     align-items: start;
-    margin: 15px 20px;
+    margin: 15px;
 }
 
 .h-image img {
     width: 100%;
     object-fit: cover;
     border: 1.5px solid #A4D0A4;
-    border-radius: 6px;
+    border-radius: 17px;
 }
 
 .not-found-page {
@@ -272,9 +302,7 @@ p.cd {
 }
 
 button.ri-delete-bin-6-line {
-    border: 1.3px solid red;
-    border-radius: 6px;
-    padding: 3px 10px;
+    border: none;
     color: red;
     font-size: 20px;
     margin-right: 5px;
@@ -282,15 +310,8 @@ button.ri-delete-bin-6-line {
     transition: .2s ease;
 }
 
-button.ri-delete-bin-6-line:hover {
-    background-color: red;
-    color: whitesmoke;
-}
-
 button.ri-edit-box-line {
-    border: 1.3px solid sandybrown;
-    border-radius: 6px;
-    padding: 3px 10px;
+    border: none;
     color: sandybrown;
     font-size: 20px;
     margin-right: 5px;
@@ -298,11 +319,9 @@ button.ri-edit-box-line {
     transition: .2s ease;
 }
 
-button.ri-edit-box-line:hover {
-    background-color: sandybrown;
-    color: whitesmoke;
+button.ri-delete-bin-6-line:hover, button.ri-edit-box-line:hover {
+    transform: scale(1.1);
 }
-
 /* === CONTENT END === */
 
 /* === DATALIST START */
@@ -337,36 +356,60 @@ datalist option:focus {
 /* === HEALTH ARTICLE START === */
 .ha-container {
     width: 100%;
+    min-height: 70vh;
     height: auto;
-    padding: 4rem 3rem;
+    padding: 2rem 7rem 7rem;
     display: flex;
     flex-direction: column;
 }
 
-.back-to-start {
+.ha-start {
     width: 100%;
+    min-height: 7rem;
+    height: auto;
+    padding: 3rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ha-head {
+    width: auto;
+    max-width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.back-to-start {
+    position: fixed;
+    left: 4rem;
+    top: 3rem;
+    width: auto;
     height: 2rem;
-    margin: 0 0 2rem 0;
+    border-radius: 39px;
+    border: 2px solid #37BD6B;
+    background: #fff;
+    display: inline-flex;
+    padding: 7px 10px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.13);
+    z-index: 2;
 }
 
 .back-to-start a {
-    font-size: 20px;
+    font-size: 15px;
     color: #111;
 }
 
-.ha-card {
+.ha-desc {
     width: 100%;
-    height: auto;
-    padding: 26px;
-    background-image: linear-gradient(to right, #F7E1AE, #FFF8D6);
-    border-radius: 8px;
-}
-
-.ha-title h1 {
-    text-align: left;
-    text-decoration: none;
-    text-transform: capitalize;
-    margin: 0 0 20px 0;
+    height: 100%;
 }
 
 .ha-desc pre {
