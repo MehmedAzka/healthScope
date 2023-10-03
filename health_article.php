@@ -20,27 +20,25 @@ $data = $find('h_topic', $id);
 </head>
 
 <body>
-    <div class="ha-container">
-        <div class="back-to-start">
-            <a href="health.php"><i class="ri-arrow-left-line"></i> Back To Page</a>
+    <?php while ($result = $data->fetch_assoc()) { ?>
+        <div class="ha-start">
+            <div class="back-to-start">
+                <a href="health.php"><i class="ri-arrow-left-s-line"></i> BACK</a>
+            </div>
+            <div class="ha-head">
+                <h1>
+                    <?= $result['title']; ?> <br>
+                </h1>
+            </div>
         </div>
-        <div class="ha-card">
-            <?php while ($result = $data->fetch_assoc()) { ?>
-                <div class="ha-title">
-                    <h1>
-                        <?= $result['title']; ?> <br>
-                    </h1>
-                </div>
-                <div class="ha-desc">
-                    <p>
-                    <pre> <?= $result['subtitle']; ?> </pre>
-                    </p>
-                </div>
-                <!-- <img class="ha-image" src="health_image/<?= $result['image'] ?>" alt="image"> -->
-            <?php } ?>
+        <div class="ha-container">
+            <div class="ha-desc">
+                <p>
+                <pre><?= $result['subtitle']; ?></pre>
+                </p>
+            </div>
         </div>
-    </div>
-
+    <?php } ?>
 
 </body>
 

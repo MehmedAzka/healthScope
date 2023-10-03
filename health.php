@@ -37,7 +37,7 @@ $photo = $_SESSION['photo'];
 </head>
 
 <body>
-<nav>
+    <nav>
         <div class="nav-content">
             <div class="logo">
                 <a href="home.php"><img src="images/healthScope.png" alt=""></a>
@@ -53,47 +53,57 @@ $photo = $_SESSION['photo'];
                 <li><a href="logout.php">Logout</a></li>
             </ul>
             <div class="user-profile">
-                <span class="user-name"><?= $username ?></span>
+                <span class="user-name">
+                    <?= $username ?>
+                </span>
                 <img src="user_pp/<?= $photo ?>" alt="" class="user-pp">
             </div>
         </div>
     </nav>
 
     <section>
+        <div class="health-component-begin">
+
+            <form method="GET">
+                <div class="src-box">
+                    <input class="src-search" type="text" name="src-box" list="title" autocomplete="off"
+                        placeholder="Search" required>
+                    <button class="src-button" type="submit" name="src"><i class="ri-search-line"></i></button>
+                </div>
+            </form>
+
+            <datalist id="title">
+                <?php while ($result3 = $show->fetch_assoc()) { ?>
+                    <option>
+                        <?php echo $result3['title']; ?>
+                    </option>
+                <?php } ?>
+            </datalist>
+
+        </div>
+        <div class="d-add">
+            <button class="add-discussion"><i class="ri-add-line"></i> New Article</button>
+        </div>
         <div class="sec-container">
-            <div class="health-component-begin">
 
-                <form method="GET">
-                    <div class="src-box">
-                        <input class="src-search" type="text" name="src-box" list="title" autocomplete="off" required>
-                        <button class="src-button" type="submit" name="src"><i class="ri-search-line"></i></button>
-                    </div>
-                </form>
-
-                <datalist id="title">
-                    <?php while ($result3 = $show->fetch_assoc()) { ?>
-                        <option>
-                            <?php echo $result3['title']; ?>
-                        </option>
-                    <?php } ?>
-                </datalist>
-
-            </div>
-
-            <div class="d-add">
-                <button class="add-discussion"><i class="ri-add-line"></i> New Article</button>
-            </div>
 
             <form action="function.php" method="post" enctype="multipart/form-data">
-                <div class="sec-add-dis">
-                    <label for="title">Title</label>
-                    <input type="text" name="title" id="title" maxlength="30" autocomplete="off" required>
-                    <label for="subtitle">Subtitle</label>
-                    <textarea name="subtitle" id="subtitle" maxlength="5000" autocomplete="off" required></textarea>
-                    <label for="image">Image *Portrait</label>
-                    <input type="file" name="image" id="image" accept="image/*" required>
-                    <button class="sad-submit" type="submit" name="health-submit"><i class="ri-add-line"></i>
-                        Add</button>
+                <div class="sec-add-dis-void">
+                    <div class="sec-add-dis">
+                        <div class="left">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" id="title" maxlength="255" autocomplete="off" required>
+                            <label for="image">Image *Portrait</label>
+                            <input type="file" name="image" id="image" accept="image/*" required>
+                        </div>
+                        <div class="right">
+                            <label for="subtitle">Subtitle</label>
+                            <textarea name="subtitle" id="subtitle" maxlength="5000" autocomplete="off"
+                                required></textarea>
+                            <button class="sad-submit" type="submit" name="health-submit"><i class="ri-add-line"></i>
+                                Add</button>
+                        </div>
+                    </div>
                 </div>
             </form>
 
@@ -106,6 +116,9 @@ $photo = $_SESSION['photo'];
                     <div class="h-content">
                         <a href="health_article.php?article=<?php echo $row['id']; ?>">
                             <div class="h-card">
+                                <div class="h-image">
+                                    <img src="health_image/<?php echo $row['image']; ?>" alt="image">
+                                </div>
                                 <div class="h-text">
                                     <h2>
                                         <?php echo $row['title']; ?>
@@ -119,17 +132,13 @@ $photo = $_SESSION['photo'];
                                         $data_limit = implode(" ", array_slice($words, 0, $max_words));
 
                                         echo $data_limit;
-                                        ?>, <i>read more...</i>
+                                        ?>....
                                     </p>
                                     <div class="wtc">
                                         <p class="writer">
-                                            <i>Written by -
-                                                <?php echo $row['created_by']; ?>
-                                            </i>
+                                            Written by -
+                                            <?php echo $row['created_by']; ?>
                                         </p>
-                                        <!-- <p class="cd">
-                                            <?php echo $row['created_date']; ?>
-                                        </p> -->
                                         <div class="h-action">
                                             <form action="function.php" method="post">
                                                 <input type="hidden" name="h_content_id" value="<?php echo $row['id'] ?>">
@@ -144,10 +153,6 @@ $photo = $_SESSION['photo'];
                                         </div>
                                     </div>
                                 </div>
-                                <div class="h-image">
-                                    <img src="health_image/<?php echo $row['image']; ?>" alt="image">
-                                </div>
-
                             </div>
                         </a>
                     </div>

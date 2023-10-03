@@ -229,7 +229,7 @@ if (isset($_POST['health-submit'])) {
     if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {
         $split = explode('.', $_FILES['image']['name']);
         $extention = $split[count($split) - 1];
-        $upload_file = $title . '.' . $extention;
+        $upload_file = uniqid() . '.' . $extention;
 
         $dir = "health_image/";
         $tmpFile = $_FILES['image']['tmp_name'];
