@@ -19,6 +19,8 @@ if (isset($_GET['src-box'])) {
     $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 10");
 }
 
+$username = $_SESSION['username'];
+$photo = $_SESSION['photo'];
 ?>
 
 <!DOCTYPE html>
@@ -35,10 +37,10 @@ if (isset($_GET['src-box'])) {
 </head>
 
 <body>
-    <nav>
+<nav>
         <div class="nav-content">
             <div class="logo">
-                <a href="home.php">HEALTHSCOPE</a>
+                <a href="home.php"><img src="images/healthScope.png" alt=""></a>
                 <span class="hamburger none" onclick="toggle()">
                     <i id="bars" class="ri-menu-line"></i>
                 </span>
@@ -48,9 +50,12 @@ if (isset($_GET['src-box'])) {
                 <li><a class="active" href="health.php">Health</a></li>
                 <li><a href="plan.php">Plan</a></li>
                 <li><a href="discussion.php">Discussion</a></li>
-                <li><a href="#">Service</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
+            <div class="user-profile">
+                <span class="user-name"><?= $username ?></span>
+                <img src="user_pp/<?= $photo ?>" alt="" class="user-pp">
+            </div>
         </div>
     </nav>
 

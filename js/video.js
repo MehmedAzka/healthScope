@@ -119,7 +119,7 @@ speedOptions.querySelectorAll("li").forEach(Option => {
 });
 
 document.addEventListener("click", e => {
-    if (e.target.tagName !== "SPAN" || e.tagert.className !== "ri-slow-down-fill") {
+    if (e.target.tagName !== "SPAN" || e.target.className !== "ri-slow-down-fill") {
         speedOptions.classList.remove("show");
     }
 });

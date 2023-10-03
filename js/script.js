@@ -1,5 +1,5 @@
 let addDiscussionButton = document.querySelector(".add-discussion");
-const secAddDis = document.querySelector(".sec-add-dis");
+let secAddDisVoid = document.querySelector(".sec-add-dis-void");
 
 let nav = document.querySelector("nav");
 let ham = document.querySelector(".hamburger");
@@ -14,11 +14,11 @@ window.onscroll = function () {
 };
 
 addDiscussionButton.addEventListener("click", function () {
-  if (!secAddDis.classList.contains("active")) {
-    secAddDis.classList.add("active");
-  } else {
-    secAddDis.classList.remove("active");
-  }
+    if (!secAddDisVoid.classList.contains("active")) {
+        secAddDisVoid.classList.add("active");
+    } else {
+        secAddDisVoid.classList.remove("active");
+    }
 });
 
 // const showMenu = (toggleId, navId) => {

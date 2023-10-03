@@ -2,6 +2,9 @@
 include "function.php";
 
 $data = $select('discussion', 'created_date');
+
+$username = $_SESSION['username'];
+$photo = $_SESSION['photo'];
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +24,7 @@ $data = $select('discussion', 'created_date');
     <nav>
         <div class="nav-content">
             <div class="logo">
-                <a href="home.php">HEALTHSCOPE</a>
+                <a href="home.php"><img src="images/healthScope.png" alt=""></a>
                 <span class="hamburger none" onclick="toggle()">
                     <i id="bars" class="ri-menu-line"></i>
                 </span>
@@ -31,9 +34,14 @@ $data = $select('discussion', 'created_date');
                 <li><a href="health.php">Health</a></li>
                 <li><a href="plan.php">Plan</a></li>
                 <li><a class="active" href="discussion.php">Discussion</a></li>
-                <li><a href="#">Service</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
+            <div class="user-profile">
+                <span class="user-name">
+                    <?= $username ?>
+                </span>
+                <img src="user_pp/<?= $photo ?>" alt="" class="user-pp">
+            </div>
         </div>
     </nav>
 
@@ -48,6 +56,9 @@ $data = $select('discussion', 'created_date');
                     while ($result = $data->fetch_assoc()) { ?>
                         <div class="d-card">
                             <a href="discussion_page.php?forum=<?php echo $result['id'] ?>">
+                                <div class="d-profile">
+                                    <h2 class="profile"><?php echo $result['created_by'] ?></h2>
+                                </div>
                                 <div class="d-title">
                                     <p>
                                         <?php echo $result['title'] ?>
@@ -71,10 +82,13 @@ $data = $select('discussion', 'created_date');
             </div>
 
             <form action="function.php" method="post">
-                <div class="sec-add-dis">
-                    <label for="diss">Your Discussion</label>
-                    <input type="text" name="diss" id="diss" maxlength="100" autocomplete="off" required>
-                    <button class="sad-submit" type="submit" name="diss-submit"><i class="ri-add-line"></i> Add</button>
+                <div class="sec-add-dis-void">
+                    <div class="sec-add-dis">
+                        <label for="diss">Your Discussion</label>
+                        <input type="text" name="diss" id="diss" maxlength="100" autocomplete="off" required>
+                        <button class="sad-submit" type="submit" name="diss-submit"><i class="ri-add-line"></i>
+                            Add</button>
+                    </div>
                 </div>
             </form>
         </div>

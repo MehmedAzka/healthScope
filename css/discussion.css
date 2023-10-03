@@ -19,9 +19,9 @@
 /* === CARD DISCUSSION START */
 .d-card {
     width: 100%;
-    border: 1.5px solid #617A55;
+    border: 1.5px solid #37BD6B;
     height: auto;
-    border-radius: 6px;
+    border-radius: 24px;
     transition: .2s ease;
     margin: 0 0 15px 0;
 }
@@ -39,12 +39,25 @@
     transform: scale(1.01);
 }
 
+.d-profile {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+h2.profile {
+    color: #111;
+}
+
 .d-title {
     width: 100%;
     height: auto;
     display: flex;
     align-items: start;
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
 }
 
 .d-title p {
@@ -63,8 +76,13 @@
 }
 
 .d-footer button.ri-delete-bin-6-line {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1.3px solid red;
-    border-radius: 6px;
+    border-radius: 9px;
     padding: 3px 10px;
     /* width: 30px; */
     color: red;
@@ -94,10 +112,11 @@
     width: 11rem;
     height: 2.4rem;
     border: none;
-    background-color: #617A55;
+    background-color: #37BD6B;
     color: #fff;
-    border-radius: 6px;
-    z-index: 3;
+    border-radius: 15px;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.13);
+    z-index: 6;
 }
 
 .add-discussion.sticky {
@@ -107,25 +126,35 @@
 /* === ADD DISCUSSION END === */
 
 /* === DISCUSSIO BOX ADD START === */
-.sec-add-dis {
-    display: flex;
-    width: 20rem;
-    height: 100%;
+.sec-add-dis-void {
+    width: 100%;
+    height: 100vh;
     position: fixed;
     top: 0;
     right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000058;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .2s;
+    z-index: 5;
+}
+
+.sec-add-dis-void.active {
+    max-height: 100%;
+}
+
+.sec-add-dis {
+    width: 50%;
+    height: 30vh;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #A4D0A4;
-    border-radius: 10px 0 0 10px;
-    max-width: 0;
-    overflow: hidden;
-    transition: max-width .2s;
-}
-
-.sec-add-dis.active {
-    max-width: 20rem;
+    background-color: #FFF;
+    border-radius: 10px;
 }
 
 .sec-add-dis label {
@@ -135,22 +164,24 @@
 .sec-add-dis input {
     width: 90%;
     padding: 10px 13px;
-    border: 1.5px solid black;
-    border-radius: 20px;
+    border: 3px solid #37BD6B;
+    border-radius: 50px;
     font-size: 15px;
     margin-bottom: 10px;
     text-decoration: none;
     text-transform: none;
     text-decoration-style: none;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.13);
 }
 
 .sad-submit {
     width: 11rem;
     height: 2.4rem;
     border: none;
-    background-color: #617A55;
+    background-color: #37BD6B;
     color: #fff;
-    border-radius: 6px;
+    border-radius: 50px;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.13);
 }
 
 /* === DISCUSSIO BOX ADD END === */
@@ -175,45 +206,59 @@
 .dp-container {
     width: 100%;
     height: auto;
-    padding: 4rem 3rem 7rem;
+    padding: 2rem 7rem 7rem;
     display: flex;
     flex-direction: column;
 }
 
-.back-to-start {
+.dp-start {
     width: 100%;
+    height: 7rem;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding: 3rem 0 0 0;
+}
+
+.back-to-start {
+    position: fixed;
+    left: 4rem;
+    top: 3rem;
+    width: auto;
     height: 2rem;
-    margin: 0 0 2rem 0;
+    border-radius: 39px;
+    border: 2px solid #37BD6B;
+    background: #fff;
+    display: inline-flex;
+    padding: 7px 10px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.13);
+    z-index: 2;
 }
 
 .back-to-start a {
-    font-size: 20px;
+    font-size: 15px;
     color: #111;
 }
 
-.dp-card {
+.dp-profile {
     width: 100%;
     height: auto;
-    padding: 26px;
-    background-image: linear-gradient(to right, #F7E1AE, #FFF8D6);
-    border-radius: 8px;
-    margin: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.dp-title h1 {
-    text-align: left;
-    text-decoration: none;
-    text-transform: capitalize;
-    margin: 0 0 20px 0;
+.dp-username {
+    margin: 0 0 10px 0;
 }
 
 .dp-comment {
     width: 100%;
     height: auto;
-    border: 1.5px solid #111;
-    border-radius: 0 30px 30px 30px;
     margin: 0 0 20px 0;
-    padding: 15px 26px;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -224,12 +269,17 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 0 0 0 5px;
 }
 
 .dp-comment-text {
     width: 100%;
     height: auto;
     margin: 0 0 10px 0;
+    padding: 10px;
+    border: 2px solid #37BD6B;
+    border-radius: 18px;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.13);
 }
 
 .dp-comment-text pre {
@@ -265,7 +315,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #A4D0A4;
+    background-color: #37BD6B;
 }
 
 .dp-input {
@@ -274,7 +324,7 @@
     max-height: 2.5rem;
     min-height: 2.5rem;
     margin: 0 10px 0 0;
-    padding: 10px 13px;
+    padding: 10px 2.5rem 10px 13px;
     border: 1.5px solid black;
     border-radius: 20px;
     font-size: 15px;
@@ -288,18 +338,21 @@
 }
 
 .dp-button {
-    width: 38px;
-    height: 38px;
-    border: 1.5px solid black;
-    border-radius: 20px;
-    background-color: #fff;
+    position: absolute;
+    top: 20%;
+    right: 26%;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: none;
+    /* color: #37BD6B; */
     font-size: 20px;
 }
 
 button.ri-delete-bin-6-line {
-    border: 1.3px solid red;
-    border-radius: 6px;
-    padding: 3px 10px;
+    border: none;
+    /* border-radius: 6px; */
+    /* padding: 3px 10px; */
     color: red;
     font-size: 20px;
     margin-right: 5px;
@@ -308,7 +361,7 @@ button.ri-delete-bin-6-line {
 }
 
 button.ri-delete-bin-6-line:hover {
-    background-color: red;
-    color: whitesmoke;
+    transform: scale(1.1);
 }
+
 /* === FORUM END === */

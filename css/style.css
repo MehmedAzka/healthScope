@@ -14,13 +14,14 @@ body {
 
 /* === NAV START === */
 .user-profile {
-  width: auto;
-  padding: 10px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.4s ease;
+    width: auto;
+    padding: 6px 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .3s ease;
+    cursor: pointer;
 }
 
 .user-profile:hover {
@@ -116,8 +117,8 @@ nav.sticky .logo a:hover {
 }
 
 .nav-links li a:hover {
-  color: #617a55;
-  transition: all 0.3s ease;
+    color: #37BD6B;
+    transition: all 0.3s ease;
 }
 
 nav.sticky .nav-links li a:hover {
@@ -151,7 +152,7 @@ nav.sticky .nav-links li a:hover {
 }
 
 .nav-links .active {
-  color: #37bd6b;
+    color: #37BD6B;
 }
 
 /* === NAV END === */
