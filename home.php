@@ -36,6 +36,7 @@ $photo = $_SESSION['photo'];
 </head>
 
 <body>
+    <!-- navbar -->
     <nav>
         <div class="nav-content">
             <div class="logo">
@@ -58,44 +59,51 @@ $photo = $_SESSION['photo'];
             </div>
         </div>
     </nav>
+    <!-- end navbar -->
 
+    <!-- daily info -->
     <section>
         <div class="container">
-            <div class="content">
-                <img class="content-image" src="images/commonSage.jpg" alt="picture" srcset="">
-                <div class="content-desk">
-                    <h3>Daun Sage</h3>
-                    <p>Daun sage umumnya digunakan secara tradisional sebagai obat melawan diabetes. Ekstrak sage
-                        dapat mengurangi kadar glukosa darah pada pengidap diabetes tipe 1 dengan mengaktifkan
-                        reseptor tertentu.</p>
+            <div class="row">
+                <div class="content">
+                    <img class="content-image" src="images/commonSage.jpg" alt="picture" srcset="">
+                    <div class="content-desk">
+                        <h3>Daun Sage</h3>
+                        <p>Daun sage umumnya digunakan secara tradisional sebagai obat melawan diabetes. Ekstrak sage
+                            dapat mengurangi kadar glukosa darah pada pengidap diabetes tipe 1 dengan mengaktifkan
+                            reseptor tertentu.</p>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <img class="content-image" src="images/honey.jpg" alt="picture" srcset="">
+                    <div class="content-desk">
+                        <h3>Madu</h3>
+                        <p>Madu adalah makanan kaya antioksidan yang dapat melindungi tubuh dari risiko serangan senyawa
+                            radikal bebas. Jika tidak, senyawa ini dapat merusak sel, menyebabkan gangguan jantung dan
+                            pembuluh darah.</p>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <img class="content-image" src="images/infusedWater.jpg" alt="picture" srcset="">
+                    <div class="content-desk">
+                        <h3>Infused Water</h3>
+                        <p>Minuman sehat ini rendah kalori, tetapi tetap mengandung beragam nutrisi penting, seperti
+                            vitamin, mineral, serta antioksidan. Tetapi tidak disarankan untuk meminumnya setiap hari,
+                            karena dapat menyebabkan tensi menjadi turun.</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="content">
-                <img class="content-image" src="images/honey.jpg" alt="picture" srcset="">
-                <div class="content-desk">
-                    <h3>Madu</h3>
-                    <p>Madu adalah makanan kaya antioksidan yang dapat melindungi tubuh dari risiko serangan senyawa
-                        radikal bebas. Jika tidak, senyawa ini dapat merusak sel, menyebabkan gangguan jantung dan
-                        pembuluh darah, hingga mempercepat penuaan kulit.</p>
-                </div>
-            </div>
-
-            <div class="content">
-                <img class="content-image" src="images/infusedWater.jpg" alt="picture" srcset="">
-                <div class="content-desk">
-                    <h3>Infused Water</h3>
-                    <p>Minuman sehat ini rendah kalori, tetapi tetap mengandung beragam nutrisi penting, seperti
-                        vitamin, mineral, serta antioksidan. Tetapi tidak disarankan untuk meminumnya setiap hari,
-                        karena dapat menyebabkan tensi menjadi turun.</p>
-                </div>
-            </div>
         </div>
     </section>
+    <!-- end daily info -->
 
+    <!-- topic 1 -->
     <section>
         <div class="container-half">
-            <div class="title">Latest Topic</div>
+            <h1 class="title">Latest Topic</h1>
             <div class="tb">
                 <?php while ($result3 = $showAll->fetch_assoc()) { ?>
                     <div class="tb-card">
@@ -110,11 +118,15 @@ $photo = $_SESSION['photo'];
                     </div>
                 <?php } ?>
             </div>
+            <a href="#"><button>View More Topic</button></a>
         </div>
     </section>
+    <!-- end topic 1 -->
 
-    <section>
-        <div class="container" style="background-color: #bbb;">
+    <!-- video -->
+    <section id="video">
+        <h1 class="title-video">Exercise For Diet</h1>
+        <div class="video">
             <div class="v-container show-controls">
                 <div class="v-wrapper">
                     <div class="video-timeline">
@@ -162,13 +174,14 @@ $photo = $_SESSION['photo'];
             </div>
         </div>
     </section>
+    <!-- end video -->
 
+    <!-- accordion -->
     <section>
-        <div class="container">
+        <div class="faq">
             <ul id="accordion">
-                <li>
-                    <label for="a-1">#1 Why Use HealthScope? <span><i
-                                class="fa-solid fa-caret-right"></i></span></label>
+                <li class="contentBx">
+                    <label for="a-1">#1 Why Use HealthScope? <span><i class="fa-solid fa-caret-right"></i></span></label>
                     <input type="radio" name="accordion" id="a-1">
                     <div class="acc-content">
                         <p>This website provides various tips and tricks so you can maintain your health and immunity.
@@ -177,9 +190,8 @@ $photo = $_SESSION['photo'];
                     </div>
                 </li>
 
-                <li>
-                    <label for="a-2">#2 Can I ask something to a health expert? <span><i
-                                class="fa-solid fa-caret-right"></i></span></label>
+                <li class="contentBx">
+                    <label for="a-2">#2 Can I ask something to a health expert? <span><i class="fa-solid fa-caret-right"></i></span></label>
                     <input type="radio" name="accordion" id="a-2">
                     <div class="acc-content">
                         <p>On this website there is a place for you to communicate with each other, share stories about
@@ -189,9 +201,8 @@ $photo = $_SESSION['photo'];
                     </div>
                 </li>
 
-                <li>
-                    <label for="a-3">#3 Can I contribute to the development of this website? <span><i
-                                class="fa-solid fa-caret-right"></i></span></label>
+                <li class="contentBx">
+                    <label for="a-3">#3 Can I contribute to the development of this website? <span><i class="fa-solid fa-caret-right"></i></span></label>
                     <input type="radio" name="accordion" id="a-3">
                     <div class="acc-content">
                         <p>You can contribute to the development of this website. We would really appreciate any
@@ -201,7 +212,7 @@ $photo = $_SESSION['photo'];
                     </div>
                 </li>
 
-                <li>
+                <li class="contentBx">
                     <label for="a-4">#4 Are there events to share experiences between santri at their respective
                         Islamic boarding schools? <span><i class="fa-solid fa-caret-right"></i></span></label>
                     <input type="radio" name="accordion" id="a-4">
@@ -212,7 +223,7 @@ $photo = $_SESSION['photo'];
                     </div>
                 </li>
 
-                <li>
+                <li class="contentBx">
                     <label for="a-5">#5 Empty <span><i class="fa-solid fa-caret-right"></i></span></label>
                     <input type="radio" name="accordion" id="a-5">
                     <div class="acc-content">
@@ -224,7 +235,9 @@ $photo = $_SESSION['photo'];
             </ul>
         </div>
     </section>
+    <!-- end accordion -->
 
+    <!-- quotes -->
     <section>
         <div class="dq-container">
             <div class="dq-card">
@@ -238,7 +251,9 @@ $photo = $_SESSION['photo'];
             </div>
         </div>
     </section>
+    <!-- end quotes -->
 
+    <!-- footer -->
     <footer>
         <div class="content-f">
             <div class="left box">
@@ -285,6 +300,7 @@ $photo = $_SESSION['photo'];
             <p>Copyright © 2023 <a href="#">HealthScope</a> All rights reserved</p>
         </div>
     </footer>
+    <!-- end footer -->
 </body>
 
 <script src="js/script.js"></script>
