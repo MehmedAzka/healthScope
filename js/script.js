@@ -4,14 +4,14 @@ let secAddDisVoid = document.querySelector(".sec-add-dis-void");
 let nav = document.querySelector("nav");
 let ham = document.querySelector(".hamburger");
 window.onscroll = function () {
-    if (document.documentElement.scrollTop > 20) {
-        nav.classList.add("sticky");
-        ham.classList.add("sticky");
-    } else {
-        nav.classList.remove("sticky");
-        ham.classList.remove("sticky");
-    }
-}
+  if (document.documentElement.scrollTop > 20) {
+    nav.classList.add("sticky");
+    ham.classList.add("sticky");
+  } else {
+    nav.classList.remove("sticky");
+    ham.classList.remove("sticky");
+  }
+};
 
 addDiscussionButton.addEventListener("click", function () {
     if (!secAddDisVoid.classList.contains("active")) {
