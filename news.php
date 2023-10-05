@@ -13,7 +13,7 @@ $photo = $_SESSION['photo'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/plan.css">
+    <link rel="stylesheet" href="css/news.css">
     <link rel="icon" href="images/logo.png">
     <title> HealthScope - Plan </title>
 </head>
@@ -42,87 +42,7 @@ $photo = $_SESSION['photo'];
     </nav>
 
     <section>
-        <div class="sec-container">
-            <div class="p-card">
-                <div class="gradient"></div>
-                <div class="p-image">
-                    <img src="images/p-content1.jpg" alt="image">
-                </div>
-                <div class="p-desk">
-                    <h1>Title</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti nobis expedita, eligendi odit,
-                        dolorem itaque iure maiores voluptatem provident distinctio illo temporibus, autem ducimus?
-                        Accusamus nihil doloribus laborum beatae atque?</p>
-                </div>
-                <div class="p-footer">
-                    <a href="#">See More <i class="ri-arrow-right-double-line"></i></a>
-                </div>
-            </div>
-
-            <div class="p-card">
-                <div class="gradient"></div>
-                <div class="p-image">
-                    <img src="images/p-content1.jpg" alt="image">
-                </div>
-                <div class="p-desk">
-                    <h1>Title</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti nobis expedita, eligendi odit,
-                        dolorem itaque iure maiores voluptatem provident distinctio illo temporibus, autem ducimus?
-                        Accusamus nihil doloribus laborum beatae atque?</p>
-                </div>
-                <div class="p-footer">
-                    <a href="#">See More <i class="ri-arrow-right-double-line"></i></a>
-                </div>
-            </div>
-
-            <div class="p-card">
-                <div class="gradient"></div>
-                <div class="p-image">
-                    <img src="images/p-content1.jpg" alt="image">
-                </div>
-                <div class="p-desk">
-                    <h1>Title</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti nobis expedita, eligendi odit,
-                        dolorem itaque iure maiores voluptatem provident distinctio illo temporibus, autem ducimus?
-                        Accusamus nihil doloribus laborum beatae atque?</p>
-                </div>
-                <div class="p-footer">
-                    <a href="#">See More <i class="ri-arrow-right-double-line"></i></a>
-                </div>
-            </div>
-
-            <div class="p-card">
-                <div class="gradient"></div>
-                <div class="p-image">
-                    <img src="images/p-content1.jpg" alt="image">
-                </div>
-                <div class="p-desk">
-                    <h1>Title</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti nobis expedita, eligendi odit,
-                        dolorem itaque iure maiores voluptatem provident distinctio illo temporibus, autem ducimus?
-                        Accusamus nihil doloribus laborum beatae atque?</p>
-                </div>
-                <div class="p-footer">
-                    <a href="#">See More <i class="ri-arrow-right-double-line"></i></a>
-                </div>
-            </div>
-
-            <div class="p-card">
-                <div class="gradient"></div>
-                <div class="p-image">
-                    <img src="images/p-content1.jpg" alt="image">
-                </div>
-                <div class="p-desk">
-                    <h1>Title</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti nobis expedita, eligendi odit,
-                        dolorem itaque iure maiores voluptatem provident distinctio illo temporibus, autem ducimus?
-                        Accusamus nihil doloribus laborum beatae atque?</p>
-                </div>
-                <div class="p-footer">
-                    <a href="#">See More <i class="ri-arrow-right-double-line"></i></a>
-                </div>
-            </div>
-        </div>
+        
     </section>
 
     <footer>
