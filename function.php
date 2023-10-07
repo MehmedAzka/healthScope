@@ -185,7 +185,7 @@ if (isset($_POST['delete-c-content'])) {
 if (isset($_POST['diss-submit'])) {
     $diss = htmlspecialchars($_POST['diss']);
     $created_by = $_SESSION['id'];
-    $date = date('Y-m-d');
+    $date = date('Y-m-d H:i:s');
 
     $data_to_insert = array(
         'title' => $diss,

@@ -1,9 +1,6 @@
 <?php
-include "function.php";
+require "function.php";
 
-$data = $select('discussion', 'created_date');
-
-$sesID = $_SESSION['id'];
 $username = $_SESSION['username'];
 $photo = $_SESSION['photo'];
 ?>
@@ -16,13 +13,13 @@ $photo = $_SESSION['photo'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/discussion.css">
+    <link rel="stylesheet" href="css/news.css">
     <link rel="icon" href="images/logo.png">
-    <title> HealthScope - Discussion</title>
+    <title> HealthScope - Plan </title>
 </head>
 
 <body>
-    <nav>
+<nav>
         <div class="nav-content">
             <div class="logo">
                 <a href="home.php"><img src="images/healthScope.png" alt=""></a>
@@ -33,70 +30,19 @@ $photo = $_SESSION['photo'];
             <ul class="nav-links">
                 <li><a href="home.php">Home</a></li>
                 <li><a href="health.php">Health</a></li>
-                <li><a href="news.php">News</a></li>
-                <li><a class="active" href="discussion.php">Discussion</a></li>
+                <li><a class="active" href="news.php">News</a></li>
+                <li><a href="discussion.php">Discussion</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
             <div class="user-profile">
-                <span class="user-name">
-                    <?= $username ?>
-                </span>
+                <span class="user-name"><?= $username ?></span>
                 <img src="user_pp/<?= $photo ?>" alt="" class="user-pp">
             </div>
         </div>
     </nav>
 
     <section>
-        <div class="d-center">
-            <div class="d-container">
-                <div class="d-add">
-                    <button id="add-discussion" class="add-discussion sticky"><i class="ri-add-line"></i> New Discussion</button>
-                </div>
-
-                <?php if (mysqli_num_rows($data) > 0) {
-                    while ($result = $data->fetch_assoc()) { ?>
-                        <div class="d-card">
-                            <a href="discussion_page.php?forum=<?php echo $result['id'] ?>">
-                                <div class="d-profile">
-                                    <h2 class="profile"><?php echo $result['created_by'] ?></h2>
-                                </div>
-                                <div class="d-title">
-                                    <p>
-                                        <?php echo $result['title'] ?>
-                                    </p>
-                                </div>
-                                <?php if ($result['created_by'] == $sesID) { ?>
-                                <div class="d-footer">
-                                    <form action="function.php" method="post">
-                                        <input type="hidden" name="id_to_delete" value="<?php echo $result['id'] ?>">
-                                        <button class="ri-delete-bin-6-line" type="submit" name="delete-submit"
-                                            onclick="return confirm('Are you sure you want to delete this data?')"></button>
-                                    </form>
-                                </div>
-                                <?php } else { ?>
-
-                                <?php } ?>
-                            </a>
-                        </div>
-                    <?php }
-                } else { ?>
-                    <div class="not-found-page">
-                        <h1>Empty</h1>
-                    </div>
-                <?php } ?>
-            </div>
-
-            <form action="function.php" method="post">
-                <div class="sec-add-dis-void">
-                    <div class="sec-add-dis">
-                        <label for="diss">Your Discussion</label>
-                        <input type="text" name="diss" id="diss" maxlength="100" autocomplete="off" placeholder="type something..." required>
-                        <button class="sad-submit" type="submit" name="diss-submit"><i class="ri-add-line"></i>
-                            Add</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+        
     </section>
 
     <footer>
