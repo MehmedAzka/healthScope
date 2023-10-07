@@ -19,6 +19,7 @@ if (isset($_GET['src-box'])) {
     $showAll = $conn->query("SELECT * FROM h_topic ORDER BY created_date DESC LIMIT 10");
 }
 
+$sesID = $_SESSION['id'];
 $username = $_SESSION['username'];
 $photo = $_SESSION['photo'];
 ?>
@@ -82,7 +83,7 @@ $photo = $_SESSION['photo'];
 
         </div>
         <div class="d-add">
-            <button class="add-discussion"><i class="ri-add-line"></i> New Article</button>
+            <button id="add-discussion" class="add-discussion"><i class="ri-add-line"></i> New Article</button>
         </div>
         <div class="sec-container">
 
@@ -92,14 +93,15 @@ $photo = $_SESSION['photo'];
                     <div class="sec-add-dis">
                         <div class="left">
                             <label for="title">Title</label>
-                            <input type="text" name="title" id="title" maxlength="255" autocomplete="off" required>
+                            <input type="text" name="title" id="title" maxlength="255" autocomplete="off"
+                                placeholder="type something..." required>
                             <label for="image">Image *Portrait</label>
                             <input type="file" name="image" id="image" accept="image/*" required>
                         </div>
                         <div class="right">
                             <label for="subtitle">Subtitle</label>
                             <textarea name="subtitle" id="subtitle" maxlength="5000" autocomplete="off"
-                                required></textarea>
+                                placeholder="explain what you mean..." required></textarea>
                             <button class="sad-submit" type="submit" name="health-submit"><i class="ri-add-line"></i>
                                 Add</button>
                         </div>
@@ -140,16 +142,19 @@ $photo = $_SESSION['photo'];
                                             <?php echo $row['created_by']; ?>
                                         </p>
                                         <div class="h-action">
-                                            <form action="function.php" method="post">
+                                            <?php if ($row['created_by'] == $sesID) { ?>
+                                                <form action="function.php" method="post">
+                                                    <input type="hidden" name="h_content_id" value="<?php echo $row['id'] ?>">
+                                                    <button class="ri-delete-bin-6-line" type="submit" name="delete-h-content"
+                                                        onclick="return confirm('Are you sure you want to delete this data?')"></button>
+                                                </form>
+                                            <?php } else { ?>
+
+                                            <?php } ?>
+                                            <!-- <div id="add-discussion">
                                                 <input type="hidden" name="h_content_id" value="<?php echo $row['id'] ?>">
-                                                <button class="ri-delete-bin-6-line" type="submit" name="delete-h-content"
-                                                    onclick="return confirm('Are you sure you want to delete this data?')"></button>
-                                            </form>
-                                            <form action="function.php" method="post">
-                                                <input type="hidden" name="h_content_id" value="<?php echo $row['id'] ?>">
-                                                <button class="ri-edit-box-line" type="submit" name="edit-h-content"
-                                                    onclick="return confirm('Are you sure you want to edit this data?')"></button>
-                                            </form>
+                                                <button class="ri-edit-box-line" type="submit" name="edit-h-content"></button>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>

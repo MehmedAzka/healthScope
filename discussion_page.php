@@ -5,6 +5,7 @@ $id = $_GET['forum'];
 $data = $find('discussion', $id);
 
 $show = $conn->query("SELECT * FROM comment WHERE commented = '$id' ORDER BY created_date DESC");
+$sesID = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -48,12 +49,16 @@ $show = $conn->query("SELECT * FROM comment WHERE commented = '$id' ORDER BY cre
                         <h4>
                             <?php echo $row['username'] ?>
                         </h4>
-                        <form action="function.php" method="post">
-                            <input type="hidden" name="forum" value="<?= $id ?>">
-                            <input type="hidden" name="c-id" value="<?php echo $row['id'] ?>">
-                            <button class="ri-delete-bin-6-line" type="submit" name="delete-c-content"
-                                onclick="return confirm('Are you sure you want to delete this data?')"></button>
-                        </form>
+                        <?php if ($row['username'] == $sesID) { ?>
+                            <form action="function.php" method="post">
+                                <input type="hidden" name="forum" value="<?= $id ?>">
+                                <input type="hidden" name="c-id" value="<?php echo $row['id'] ?>">
+                                <button class="ri-delete-bin-6-line" type="submit" name="delete-c-content"
+                                    onclick="return confirm('Are you sure you want to delete this data?')"></button>
+                            </form>
+                        <?php } else { ?>
+
+                        <?php } ?>
                     </div>
                     <div class="dp-comment-text">
                         <p>

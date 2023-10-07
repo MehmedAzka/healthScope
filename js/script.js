@@ -1,4 +1,4 @@
-let addDiscussionButton = document.querySelector(".add-discussion");
+let addDiscussionButton = document.getElementById("add-discussion");
 let secAddDisVoid = document.querySelector(".sec-add-dis-void");
 
 let nav = document.querySelector("nav");
