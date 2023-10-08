@@ -88,7 +88,7 @@ nav .logo {
 
 nav .logo img {
   margin-top: 20px;
-  width: 100px;
+  width: 30px;
 }
 
 nav.sticky .logo a {
@@ -504,58 +504,62 @@ nav.sticky .nav-links li a:hover {
 /* === VIDEO END === */
 
 /* === ACCORDION START === */
-#accordion {
-  margin: 100px auto;
-  width: 75%;
-}
-
-#accordion li {
-  list-style: none;
+.faq {
   width: 100%;
-  margin-bottom: 10px;
-  border: 1.5px solid #37bd6b;
-  padding: 10px;
-  border-radius: 6px;
-}
-
-#accordion li label {
-  padding: 10px;
+  height: 90vh;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  color: #37bd6b;
 }
 
-#accordion li label span {
-  transform: rotate(90deg);
-  font-size: 22px;
-  color: #617a55;
+.accordion {
+  width: 80%;
+  margin: 0 15px;
+  padding: 15px;
+  border-radius: 8px;
 }
 
-#accordion label+input[type="radio"] {
-  display: none;
-}
-
-#accordion .acc-content {
-  padding: 0 10px;
-  line-height: 26px;
-  max-height: 0;
+.accordion .accordion-content {
+  margin: 0 0 10px 0;
+  border-radius: 15px;
   overflow: hidden;
-  transition: max-height 0.5s;
 }
 
-#accordion label+input[type="radio"]:checked+.acc-content {
-  max-height: 400px;
+.accordion-content.open {
+  padding-bottom: 15px;
 }
 
-.acc-title {
-  height: 30px;
-  width: auto;
-  margin: 0 0 20px 0;
-  font-size: 27px;
+.accordion-content header {
+  min-height: 4rem;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all .3s linear;
+}
+
+.accordion-content header:hover {
+  background-color: #bbf3d1;
+}
+
+/* 
+.accordion-content.open header {
+  min-height: 5rem;
+} */
+
+.accordion-content header i {
+  font-size: 25px;
+}
+
+.accordion-title {
+  font-weight: bolder;
+}
+
+.accordion-content .accordion-desc {
+  height: 0;
+  padding: 0 15px;
+  transition: all .3s linear;
 }
 
 /* === ACCORDION END === */

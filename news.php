@@ -15,14 +15,14 @@ $photo = $_SESSION['photo'];
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/news.css">
     <link rel="icon" href="images/logo.png">
-    <title> HealthScope - Plan </title>
+    <title> HealthScope - News </title>
 </head>
 
 <body>
 <nav>
         <div class="nav-content">
             <div class="logo">
-                <a href="home.php"><img src="images/healthScope.png" alt=""></a>
+                <a href="home.php"><img src="images/logo.png" alt=""></a>
                 <span class="hamburger none" onclick="toggle()">
                     <i id="bars" class="ri-menu-line"></i>
                 </span>

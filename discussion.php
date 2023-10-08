@@ -25,7 +25,7 @@ $photo = $_SESSION['photo'];
     <nav>
         <div class="nav-content">
             <div class="logo">
-                <a href="home.php"><img src="images/healthScope.png" alt=""></a>
+                <a href="home.php"><img src="images/logo.png" alt=""></a>
                 <span class="hamburger none" onclick="toggle()">
                     <i id="bars" class="ri-menu-line"></i>
                 </span>
