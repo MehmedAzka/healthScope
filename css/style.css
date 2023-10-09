@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -20,12 +20,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
   cursor: pointer;
-}
-
-.user-profile:hover {
-  background-color: #37bd6b;
 }
 
 .user-profile .user-name {
@@ -33,18 +29,99 @@ body {
   text-align: center;
   /* font-family: Poppins; */
   font-size: 15px;
-  font-style: normal;
   font-weight: 500;
   line-height: normal;
   margin: 0 10px 0 0;
 }
 
-.user-profile .user-pp {
+.user-pp {
   min-width: 37px;
   min-height: 37px;
   object-fit: cover;
   border-radius: 50px;
   border: 1px solid #111;
+}
+
+.sub-menu-wrap {
+  position: absolute;
+  top: 100%;
+  right: 5%;
+  width: 320px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu {
+  max-height: 400px;
+}
+
+.sub-menu {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  margin: 10px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info .user-name {
+  font-size: 20px;
+  font-weight: bolder;
+  line-height: normal;
+  margin: 0 10px 0 0;
+}
+
+.user-info img {
+  min-width: 37px;
+  min-height: 37px;
+  border-radius: 50px;
+  margin-right: 20px;
+  object-fit: cover;
+  border: 1px solid #111;
+}
+
+.sub-menu hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+  margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+  color: #000;
+}
+
+.sub-menu-link p {
+  width: 100%;
+}
+
+.sub-menu-link svg {
+  width: 40px;
+  background: #e5e5e5;
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 15px;
+}
+
+.sub-menu-link span {
+  font-size: 15px;
+  transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span {
+  transform: translateX(5px);
+}
+
+.sub-menu-link:hover p {
+  font-weight: 600;
 }
 
 nav {
@@ -100,7 +177,7 @@ nav.sticky .logo a:hover {
 }
 
 .nav-content .nav-links {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
 }
 
@@ -118,7 +195,7 @@ nav.sticky .logo a:hover {
 }
 
 .nav-links li a:hover {
-  color: #37BD6B;
+  color: #37bd6b;
   transition: all 0.3s ease;
 }
 
@@ -153,7 +230,7 @@ nav.sticky .nav-links li a:hover {
 }
 
 .nav-links .active {
-  color: #37BD6B;
+  color: #37bd6b;
 }
 
 /* === NAV END === */
@@ -211,8 +288,50 @@ nav.sticky .nav-links li a:hover {
 .content-image:hover {
   transform: scale(1.04);
 }
-
 /* === CONTENT END === */
+
+/* USERS */
+.users {
+  display: flex;
+  justify-content: center;
+}
+
+.users section {
+  width: 60rem;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 9rem;
+  padding-top: 2rem;
+}
+
+.users .card-one,
+.users .card-two,
+.users .card-three,
+.users .card-four {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  border: 3px solid #37bd6b;
+  padding: 10px;
+  width: 13rem;
+  height: 10rem;
+}
+
+.users p,
+.users h4 {
+  color: #37bd6b;
+  margin-top: 10px;
+}
+
+.counter {
+  font-size: 24px;
+  font-weight: bold;
+}
+/* END USERS */
 
 /* === TOPIC 1 START === */
 .container-half {
@@ -293,6 +412,22 @@ nav.sticky .nav-links li a:hover {
 }
 
 /* === TOPIC 1 END === */
+
+/* TESTIMONIAL */
+
+.monial {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 3rem;
+}
+
+.monial .row h1 {
+  font-size: 38px;
+}
+
+
+
+/* END TESTIMONIAL */
 
 /* === VIDEO START === */
 .video-controls,
@@ -535,7 +670,7 @@ nav.sticky .nav-links li a:hover {
   color: #617a55;
 }
 
-#accordion label+input[type="radio"] {
+#accordion label + input[type="radio"] {
   display: none;
 }
 
@@ -547,7 +682,7 @@ nav.sticky .nav-links li a:hover {
   transition: max-height 0.5s;
 }
 
-#accordion label+input[type="radio"]:checked+.acc-content {
+#accordion label + input[type="radio"]:checked + .acc-content {
   max-height: 400px;
 }
 

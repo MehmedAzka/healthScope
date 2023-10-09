@@ -14,11 +14,11 @@ window.onscroll = function () {
 };
 
 addDiscussionButton.addEventListener("click", function () {
-    if (!secAddDisVoid.classList.contains("active")) {
-        secAddDisVoid.classList.add("active");
-    } else {
-        secAddDisVoid.classList.remove("active");
-    }
+  if (!secAddDisVoid.classList.contains("active")) {
+    secAddDisVoid.classList.add("active");
+  } else {
+    secAddDisVoid.classList.remove("active");
+  }
 });
 
 // const showMenu = (toggleId, navId) => {
