@@ -60,7 +60,7 @@ $show = $find('user', $sesID);
                         <p>Profile Setting</p>
                         <span>></span>
                     </a>
-                    <a href="#" class="sub-menu-link">
+                    <a href="contact.php" class="sub-menu-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
                             class="bi bi-question-circle-fill" viewBox="0 0 16 16">
                             <path
@@ -112,12 +112,8 @@ $show = $find('user', $sesID);
                                     <div class="d-footer">
                                         <form action="function.php" method="post">
                                             <input type="hidden" name="id_to_delete" value="<?php echo $result['id'] ?>">
-<<<<<<< HEAD
-                                            <button class="ri-delete-bin-6-line" type="submit" name="delete-submit" onclick="return confirm('Are you sure you want to delete this data?')"></button>
-=======
                                             <button class="ri-delete-bin-6-line" type="submit" name="delete-submit"
                                                 onclick="return confirm('Are you sure you want to delete this data?')"></button>
->>>>>>> 5b7b8a7b6812c7fe456cfe2b6edf19508cd427b4
                                         </form>
                                     </div>
                                 <?php } else { ?>

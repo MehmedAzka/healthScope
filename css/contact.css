@@ -1,45 +1,52 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-   
+
 }
-.container{
-    width: 1000px!important;
+
+.container {
+    width: 1000px !important;
     border-radius: 50px;
 }
-p{
+
+p {
     font-size: 12px;
 }
-h1{
-    font-family: Verdana, Geneva, Tahoma, sans-serif!important;
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
 }
-.bg-primary{
+
+.bg-primary {
     background-color: #37BD6B !important;
-    font-family:Verdana, Geneva, Tahoma, sans-serif!important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
     border-radius: 50px 0px 0px 50px;
 
 }
+
 .form-control {
     height: 36px;
     background: #fff;
     color: rgba(0, 0, 0, 0.8);
     font-size: 14px;
     border-radius: 50px;
-    
     box-shadow: none !important;
     border: 2px solid #37BD6B;
 }
+
 .contactForm .form-control {
     border: none;
     border: 2px solid #37BD6B;
-    padding: 0;
+    padding: 0 10px;
 }
 
 
-.form-control:focus,.form-control:active {
+.form-control:focus,
+.form-control:active {
     border-color: #01d28e !important;
 }
+
 .form-label {
     color: #000;
     text-transform: uppercase;
@@ -47,24 +54,48 @@ h1{
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
+
 .btn.btn-primary {
     background: #5EE994 !important;
     border-color: #5EE994 !important;
     color: #fff;
     width: 100px;
-    border-radius: 50px!important;
-    
-}
-.btn.btn-primary:hover{
-    background-color: #37BD6B!important;
+    border-radius: 50px !important;
+
 }
 
-.bi{
+.btn.btn-primary:hover {
+    background-color: #37BD6B !important;
+}
+
+.bi {
     font-size: 50px;
 }
+
 @media only screen and (max-width: 600px) {
-    .container{
-        width: 100%!important;
-        padding-bottom: 207px!important;
+    .container {
+        width: 100% !important;
+        padding-bottom: 207px !important;
     }
-  }
+}
+
+.back {
+    position: absolute;
+    padding: 0 2rem;
+}
+
+.back button {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #37bd6b;
+    border: 2px solid #37bd6b;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.back button:hover,
+.back button:active {
+    background-color: #37bd6b;
+    color: white;
+    border-color: #37bd6b;
+}
