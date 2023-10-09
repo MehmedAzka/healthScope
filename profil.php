@@ -73,8 +73,7 @@ $photo = $_SESSION['photo'];
 
     // BUTTON Back
     function goBack() {
-        // Kembali ke home.php
-        window.location.href = 'home.php';
+        window.history.back();
     }
 </script>
 
