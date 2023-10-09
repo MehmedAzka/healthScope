@@ -6,6 +6,7 @@ session_start();
 if (isset($_POST['regis-user'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
+    $date = date('Y-m-d H:i:s');
 
     // Pengecekan konfirmasi kata sandi
     $password = $_POST['password'];
@@ -32,7 +33,7 @@ if (isset($_POST['regis-user'])) {
             echo "<script>alert('Username atau email sudah terdaftar!');</script>";
             header("location: index.php");
         } else {
-            $sql = "INSERT INTO user (username, email, pass, photo, role) VALUES ('$username', '$email', '$passwordHash', '$photo', '$role')";
+            $sql = "INSERT INTO user (username, email, pass, photo, role, created_date) VALUES ('$username', '$email', '$passwordHash', '$photo', '$role', '$date')";
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script>alert('You have registered!');</script>";

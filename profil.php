@@ -42,7 +42,7 @@ $photo = $_SESSION['photo'];
                 <hr>
                 <div class="input-edit">
                     <p>Email</p>
-                    <input type="text" placeholder="jamus@gmail.com">
+                    <input type="text" placeholder="user@dummy.xyz">
                 </div>
             </div>
             <div class="info-right">
@@ -62,20 +62,5 @@ $photo = $_SESSION['photo'];
 </body>
 
 <script src="js/script.js"></script>
-
-<script>
-    // USER FUNCTION
-    let subMenu = document.querySelector(".sub-menu-wrap");
-
-    function toggleMenu() {
-        subMenu.classList.toggle("open-menu");
-    }
-
-    // BUTTON Back
-    function goBack() {
-        // Kembali ke home.php
-        window.location.href = 'home.php';
-    }
-</script>
 
 </html>

@@ -13,6 +13,17 @@ window.onscroll = function () {
   }
 };
 
+// USER FUNCTION
+let subMenu = document.querySelector(".sub-menu-wrap");
+
+function toggleMenu() {
+  subMenu.classList.toggle("open-menu");
+}
+
+function goBack() {
+  window.history.back();
+}
+
 addDiscussionButton.addEventListener("click", function () {
   if (!secAddDisVoid.classList.contains("active")) {
     secAddDisVoid.classList.add("active");
