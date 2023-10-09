@@ -18,6 +18,7 @@ $photo = $_SESSION['photo'];
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/discussion.css">
     <link rel="icon" href="images/logo.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title> HealthScope - Discussion</title>
 </head>
 
@@ -55,8 +56,9 @@ $photo = $_SESSION['photo'];
 
                 <?php if (mysqli_num_rows($data) > 0) {
                     while ($result = $data->fetch_assoc()) { ?>
-                        <div class="d-card">
-                            <a href="discussion_page.php?forum=<?php echo $result['id'] ?>">
+                        <div class="d-card" data-aos="fade-left" data-aos-easing="linear"
+     data-aos-duration="500">
+                            <a href="discussion_page.php?forum=<?php echo $result['id'] ?>" >
                                 <div class="d-profile">
                                     <h2 class="profile"><?php echo $result['created_by'] ?></h2>
                                 </div>
@@ -148,5 +150,14 @@ $photo = $_SESSION['photo'];
 </body>
 
 <script src="js/script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+  easing: 'linear',
+  duration: 500
+});
+
+</script>
+
 
 </html>

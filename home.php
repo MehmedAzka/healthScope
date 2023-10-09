@@ -31,6 +31,7 @@ $photo = $_SESSION['photo'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="icon" href="images/logo.png">
     <title> HealthScope </title>
@@ -69,7 +70,7 @@ $photo = $_SESSION['photo'];
                         <p>Profile Setting</p>
                         <span>></span>
                     </a>
-                    <a href="#" class="sub-menu-link">
+                    <a href="Contact.php" class="sub-menu-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
                         </svg>
@@ -82,7 +83,7 @@ $photo = $_SESSION['photo'];
                             <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
                         </svg>
                         <p>Log Out</p>
-                        <span>></span>
+                        <span><i class="ri-arrow-right-line"></i></span>
                     </a>
                 </div>
             </div>
@@ -94,7 +95,7 @@ $photo = $_SESSION['photo'];
     <section>
         <div class="container">
             <div class="row">
-                <div class="content">
+                <div class="content" data-aos="fade-down-right"  data-aos-delay="500">
                     <img class="content-image" src="images/commonSage.jpg" alt="picture" srcset="">
                     <div class="content-desk">
                         <h3>Daun Sage</h3>
@@ -104,7 +105,7 @@ $photo = $_SESSION['photo'];
                     </div>
                 </div>
 
-                <div class="content">
+                <div class="content" data-aos="zoom-in-up" data-aos-delay="500">
                     <img class="content-image" src="images/honey.jpg" alt="picture" srcset="">
                     <div class="content-desk">
                         <h3>Madu</h3>
@@ -114,7 +115,7 @@ $photo = $_SESSION['photo'];
                     </div>
                 </div>
 
-                <div class="content">
+                <div class="content"  data-aos="fade-down-left"  data-aos-delay="500">
                     <img class="content-image" src="images/infusedWater.jpg" alt="picture" srcset="">
                     <div class="content-desk">
                         <h3>Infused Water</h3>
@@ -132,31 +133,36 @@ $photo = $_SESSION['photo'];
     <!-- users -->
     <div class="users">
         <section>
-            <div class="card-one">
+            <div class="card-one"  data-aos="zoom-in-right" data-aos-delay="00">
                 <svg width="38" height="42" viewBox="0 0 38 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 21C21.8795 21 24.641 19.8938 26.6772 17.9246C28.7133 15.9555 29.8571 13.2848 29.8571 10.5C29.8571 7.71523 28.7133 5.04451 26.6772 3.07538C24.641 1.10625 21.8795 0 19 0C16.1205 0 13.3589 1.10625 11.3228 3.07538C9.28673 5.04451 8.14286 7.71523 8.14286 10.5C8.14286 13.2848 9.28673 15.9555 11.3228 17.9246C13.3589 19.8938 16.1205 21 19 21ZM15.1237 24.9375C6.76875 24.9375 0 31.4836 0 39.5637C0 40.909 1.12813 42 2.5192 42H35.4808C36.8719 42 38 40.909 38 39.5637C38 31.4836 31.2313 24.9375 22.8763 24.9375H15.1237Z" fill="#37BD6B" />
                 </svg>
-                <p class="counter">120</p>
+                <p class="counter">1320</p>
                 <h4>Website Users</h4>
             </div>
-            <div class="card-two">
+
+            <div class="card-two" data-aos="fade-up"
+     data-aos-easing="linear"
+     data-aos-duration="1200">
                 <svg width="48" height="42" viewBox="0 0 48 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 5.25019C0 2.34909 2.352 0 5.25 0H30.75C33.651 0 36 2.34909 36 5.25019V21.7508C36 23.1432 35.4469 24.4786 34.4623 25.4632C33.4777 26.4478 32.1424 27.001 30.75 27.001H21.183L13.461 34.7203C12.8497 35.3313 12.071 35.7473 11.2233 35.9159C10.3756 36.0844 9.497 35.9978 8.6985 35.6671C7.89999 35.3364 7.21744 34.7764 6.73713 34.0578C6.25682 33.3393 6.0003 32.4945 6 31.6301V27.001H5.25C3.85761 27.001 2.52226 26.4478 1.53769 25.4632C0.553123 24.4786 0 23.1432 0 21.7508L0 5.25019ZM5.25 4.50016C5.05109 4.50016 4.86032 4.57918 4.71967 4.71984C4.57902 4.8605 4.5 5.05127 4.5 5.25019V21.7508C4.5 22.1648 4.836 22.5008 5.25 22.5008H8.25C8.84674 22.5008 9.41903 22.7379 9.84099 23.1598C10.2629 23.5818 10.5 24.1541 10.5 24.7509V31.3181L18.66 23.1608C18.8684 22.9514 19.1162 22.7853 19.3891 22.6721C19.662 22.5588 19.9545 22.5006 20.25 22.5008H30.75C30.9489 22.5008 31.1397 22.4218 31.2803 22.2811C31.421 22.1405 31.5 21.9497 31.5 21.7508V5.25019C31.5 5.05127 31.421 4.8605 31.2803 4.71984C31.1397 4.57918 30.9489 4.50016 30.75 4.50016H5.25ZM42.75 10.5004H41.25C40.6533 10.5004 40.081 10.2633 39.659 9.84135C39.2371 9.41938 39 8.84706 39 8.2503C39 7.65354 39.2371 7.08122 39.659 6.65925C40.081 6.23728 40.6533 6.00022 41.25 6.00022H42.75C45.651 6.00022 48 8.3493 48 11.2504V27.751C48 29.1434 47.4469 30.4789 46.4623 31.4635C45.4777 32.4481 44.1424 33.0012 42.75 33.0012H42V37.6304C41.9997 38.4947 41.7432 39.3395 41.2629 40.058C40.7826 40.7766 40.1 41.3366 39.3015 41.6673C38.503 41.9981 37.6244 42.0846 36.7767 41.9161C35.929 41.7476 35.1503 41.3315 34.539 40.7205L27.66 33.8412C27.4512 33.6324 27.2856 33.3845 27.1726 33.1117C27.0596 32.8389 27.0014 32.5465 27.0014 32.2512C27.0014 31.9559 27.0596 31.6635 27.1726 31.3906C27.2856 31.1178 27.4512 30.8699 27.66 30.6611C27.8688 30.4523 28.1167 30.2867 28.3895 30.1737C28.6623 30.0607 28.9547 30.0025 29.25 30.0025C29.5453 30.0025 29.8377 30.0607 30.1105 30.1737C30.3833 30.2867 30.6312 30.4523 30.84 30.6611L37.5 37.3184V30.7511C37.5 30.1544 37.7371 29.582 38.159 29.1601C38.581 28.7381 39.1533 28.501 39.75 28.501H42.75C42.9489 28.501 43.1397 28.422 43.2803 28.2814C43.421 28.1407 43.5 27.9499 43.5 27.751V11.2504C43.5 11.0515 43.421 10.8607 43.2803 10.7201C43.1397 10.5794 42.9489 10.5004 42.75 10.5004ZM26.34 11.3404L17.34 20.3407C17.1317 20.5505 16.884 20.7169 16.6111 20.8305C16.3382 20.9441 16.0456 21.0025 15.75 21.0025C15.4544 21.0025 15.1618 20.9441 14.8889 20.8305C14.616 20.7169 14.3683 20.5505 14.16 20.3407L9.66 15.8406C9.4512 15.6318 9.28557 15.3839 9.17256 15.111C9.05956 14.8382 9.0014 14.5458 9.0014 14.2505C9.0014 13.9552 9.05956 13.6628 9.17256 13.39C9.28557 13.1172 9.4512 12.8693 9.66 12.6605C9.8688 12.4516 10.1167 12.286 10.3895 12.173C10.6623 12.06 10.9547 12.0018 11.25 12.0018C11.5453 12.0018 11.8377 12.06 12.1105 12.173C12.3833 12.286 12.6312 12.4516 12.84 12.6605L15.75 15.5676L23.16 8.1603C23.5817 7.73859 24.1536 7.50167 24.75 7.50167C25.3464 7.50167 25.9183 7.73859 26.34 8.1603C26.7617 8.58201 26.9986 9.15397 26.9986 9.75035C26.9986 10.3467 26.7617 10.9187 26.34 11.3404Z" fill="#37BD6B" />
                 </svg>
-                <p class="counter">68</p>
+                <p class="counter">468</p>
                 <h4>People Discussing</h4>
             </div>
-            <div class="card-three">
+            <div class="card-three" data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1200">
                 <svg width="54" height="58" viewBox="0 0 54 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M34.3652 14.5H40.9247C41.5046 14.5 42.0607 14.7546 42.4708 15.2078C42.8808 15.661 43.1112 16.2757 43.1112 16.9166V43.5C43.1112 44.7818 42.6505 46.0112 41.8304 46.9176C41.0103 47.8241 39.898 48.3333 38.7382 48.3333M38.7382 48.3333C37.5784 48.3333 36.4661 47.8241 35.646 46.9176C34.8259 46.0112 34.3652 44.7818 34.3652 43.5V12.0833C34.3652 11.4424 34.1348 10.8277 33.7248 10.3745C33.3147 9.92124 32.7586 9.66663 32.1787 9.66663H10.3136C9.73368 9.66663 9.17754 9.92124 8.76749 10.3745C8.35744 10.8277 8.12708 11.4424 8.12708 12.0833V41.0833C8.12708 43.0061 8.81817 44.8502 10.0483 46.2098C11.2785 47.5695 12.9469 48.3333 14.6866 48.3333H38.7382Z" stroke="#37BD6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M18.254 19.3334H27.0001" stroke="#37BD6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M18.254 29H27.0001" stroke="#37BD6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M18.254 38.6666H27.0001" stroke="#37BD6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <p class="counter">27</p>
+                <p class="counter">227</p>
                 <h4>Health News</h4>
             </div>
-            <div class="card-four">
+            <div class="card-four" data-aos="zoom-in-left" data-aos-delay="500">
                 <svg width="48" height="42" viewBox="0 0 48 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M36 36.4736V12.1578" stroke="#37BD6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M18 26.0527L24 20.8422L30 26.0527" stroke="#37BD6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
@@ -199,22 +205,10 @@ $photo = $_SESSION['photo'];
     </section>
     <!-- end topic 1 -->
 
-    <!-- testimonial -->
-    <div class="monial">
-        <div class="row">
-            <h1>Doctor's Advice</h1>
-        </div>
-        <div class="row-main">
-            <div class="card-one">
-                
-            </div>
-        </div>
-    </div>
-    <!-- end testimonial -->
 
     <!-- video -->
     <section id="video">
-        <h1 class="title-video" data-aos="fade-right">Exercise For Diet</h1>
+        <h1 class="title-video" >Exercise For Diet</h1>
         <div class="video">
             <div class="v-container show-controls">
                 <div class="v-wrapper">
@@ -264,6 +258,43 @@ $photo = $_SESSION['photo'];
         </div>
     </section>
     <!-- end video -->
+
+       <!-- testimonial -->
+       <div class="monial">
+        <div class="row">
+            <h1>User Testimonials</h1>
+        </div>
+        <div class="crads">
+
+            <div class="card">
+           <img src="images/1.jpg">
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos tempore reprehenderit quibusdam velit nemo eum sunt eaque quo itaque fugit.</p>
+           <h2>Bujang</h2>
+           <h4>Penganguran</h4>
+           <i class="ri-double-quotes-l"></i>
+            </div>
+
+            <div class="card">
+           <img src="images/1.jpg">
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos tempore reprehenderit quibusdam velit nemo eum sunt eaque quo itaque fugit.</p>
+           <h2>Kimak</h2>
+           <h4>Penganguran</h4>
+           <i class="ri-double-quotes-l"></i>
+            </div>
+
+
+            <div class="card">
+           <img src="images/1.jpg">
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos tempore reprehenderit quibusdam velit nemo eum sunt eaque quo itaque fugit.</p>
+           <h2>jamus</h2>
+           <h4>Penganguran</h4>
+           <i class="ri-double-quotes-l"></i>
+            
+            </div>
+        </div>
+    </div>
+    <!-- end testimonial -->
+
 
     <!-- accordion -->
     <section>
@@ -423,30 +454,59 @@ $photo = $_SESSION['photo'];
     // Ambil elemen dengan class "counter"
     const counters = document.querySelectorAll('.counter');
 
-    // Fungsi untuk melakukan animasi menghitung
+    // Fungsi untuk memulai animasi menghitung
     function startCounting() {
         counters.forEach(counter => {
             const target = +counter.innerText; // Ambil nilai target dari teks counter
             const increment = target / 100; // Hitung nilai increment per langkah
 
             let current = 0;
+            let animationStarted = false;
 
-            // Jalankan animasi menghitung dengan interval
-            const timer = setInterval(() => {
-                current += increment;
-                counter.innerText = Math.ceil(current); // Tampilkan nilai yang telah dihitung
+            // Fungsi untuk memeriksa apakah elemen dalam viewport
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
 
-                // Berhenti saat mencapai nilai target
-                if (current >= target) {
-                    clearInterval(timer);
-                    counter.innerText = target;
+            // Fungsi untuk memulai animasi saat elemen dalam viewport
+            function checkAndStartAnimation() {
+                if (isElementInViewport(counter) && !animationStarted) {
+                    animationStarted = true;
+
+                    // Jalankan animasi menghitung dengan interval
+                    const timer = setInterval(() => {
+                        current += increment;
+                        counter.innerText = Math.ceil(current); // Tampilkan nilai yang telah dihitung
+
+                        // Berhenti saat mencapai nilai target
+                        if (current >= target) {
+                            clearInterval(timer);
+                            counter.innerText = target;
+                        }
+                    }, 10);
                 }
-            }, 10);
+            }
+
+            // Panggil fungsi untuk memulai animasi saat scrolling
+            window.addEventListener('scroll', checkAndStartAnimation);
         });
     }
 
-    // Panggil fungsi untuk memulai animasi menghitung setelah elemen dimuat
-    window.addEventListener('load', startCounting);
+    // Panggil fungsi untuk memulai animasi menghitung
+    startCounting();
 </script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
+
 
 </html>
