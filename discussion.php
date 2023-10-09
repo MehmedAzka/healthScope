@@ -3,6 +3,7 @@ include "function.php";
 
 $data = $select('discussion', 'created_date');
 
+$sesID = $_SESSION['id'];
 $username = $_SESSION['username'];
 $photo = $_SESSION['photo'];
 ?>
@@ -24,7 +25,7 @@ $photo = $_SESSION['photo'];
     <nav>
         <div class="nav-content">
             <div class="logo">
-                <a href="home.php"><img src="images/healthScope.png" alt=""></a>
+                <a href="home.php"><img src="images/logo.png" alt=""></a>
                 <span class="hamburger none" onclick="toggle()">
                     <i id="bars" class="ri-menu-line"></i>
                 </span>
@@ -49,7 +50,7 @@ $photo = $_SESSION['photo'];
         <div class="d-center">
             <div class="d-container">
                 <div class="d-add">
-                    <button class="add-discussion sticky"><i class="ri-add-line"></i> New Discussion</button>
+                    <button id="add-discussion" class="add-discussion sticky"><i class="ri-add-line"></i> New Discussion</button>
                 </div>
 
                 <?php if (mysqli_num_rows($data) > 0) {
@@ -64,6 +65,7 @@ $photo = $_SESSION['photo'];
                                         <?php echo $result['title'] ?>
                                     </p>
                                 </div>
+                                <?php if ($result['created_by'] == $sesID) { ?>
                                 <div class="d-footer">
                                     <form action="function.php" method="post">
                                         <input type="hidden" name="id_to_delete" value="<?php echo $result['id'] ?>">
@@ -71,12 +73,15 @@ $photo = $_SESSION['photo'];
                                             onclick="return confirm('Are you sure you want to delete this data?')"></button>
                                     </form>
                                 </div>
+                                <?php } else { ?>
+
+                                <?php } ?>
                             </a>
                         </div>
                     <?php }
                 } else { ?>
                     <div class="not-found-page">
-                        <h1>Not Found</h1>
+                        <h1>Empty</h1>
                     </div>
                 <?php } ?>
             </div>
@@ -85,7 +90,7 @@ $photo = $_SESSION['photo'];
                 <div class="sec-add-dis-void">
                     <div class="sec-add-dis">
                         <label for="diss">Your Discussion</label>
-                        <input type="text" name="diss" id="diss" maxlength="100" autocomplete="off" required>
+                        <input type="text" name="diss" id="diss" maxlength="100" autocomplete="off" placeholder="type something..." required>
                         <button class="sad-submit" type="submit" name="diss-submit"><i class="ri-add-line"></i>
                             Add</button>
                     </div>

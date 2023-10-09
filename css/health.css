@@ -44,6 +44,7 @@
 
 .src-button {
     position: absolute;
+    top: 17%;
     right: 25%;
     width: 27px;
     height: 27px;
@@ -293,6 +294,7 @@ p.cd {
 
 .not-found-page h1 {
     color: #00000058;
+    text-align: center;
 }
 
 .h-action {

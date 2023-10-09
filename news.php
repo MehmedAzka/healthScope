@@ -15,14 +15,14 @@ $photo = $_SESSION['photo'];
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/news.css">
     <link rel="icon" href="images/logo.png">
-    <title> HealthScope - Plan </title>
+    <title> HealthScope - News </title>
 </head>
 
 <body>
-<nav>
+    <nav>
         <div class="nav-content">
             <div class="logo">
-                <a href="home.php"><img src="images/healthScope.png" alt=""></a>
+                <a href="home.php"><img src="images/logo.png" alt=""></a>
                 <span class="hamburger none" onclick="toggle()">
                     <i id="bars" class="ri-menu-line"></i>
                 </span>
@@ -35,14 +35,60 @@ $photo = $_SESSION['photo'];
                 <li><a href="logout.php">Logout</a></li>
             </ul>
             <div class="user-profile">
-                <span class="user-name"><?= $username ?></span>
+                <span class="user-name">
+                    <?= $username ?>
+                </span>
                 <img src="user_pp/<?= $photo ?>" alt="" class="user-pp">
             </div>
         </div>
     </nav>
 
     <section>
-        
+        <div class="n-container">
+            <div class="n-content-top">
+                <div class="left">
+                    <div class="n-box-top">
+                        <img src="images/topp-image1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="n-box-top">
+                        <img src="images/topp-image1.jpg" alt="">
+                    </div>
+                    <div class="n-box-top">
+                        <img src="images/topp-image1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="n-content-bottom">
+                <div class="middle">
+                    <div class="n-box-bottom">
+                        <img src="images/topp-image1.jpg" alt="">
+                        <div class="n-text-bottom">
+                            <h3 class="n-title-bottom">this is some dummy title</h3>
+                            <p class="n-subtitle-bottom">This is only dummy subtitle, not Lorem Ipsum. Hello World, i'm here to see you!!!</p>
+                        </div>
+                    </div>
+
+                    <div class="n-box-bottom">
+                        <img src="images/topp-image1.jpg" alt="">
+                        <div class="n-text-bottom">
+                            <h3 class="n-title-bottom">this is some dummy title</h3>
+                            <p class="n-subtitle-bottom">This is only dummy subtitle, not Lorem Ipsum. Hello World, i'm here to see you!!!</p>
+                        </div>
+                    </div>
+
+                    <div class="n-box-bottom">
+                        <img src="images/topp-image1.jpg" alt="">
+                        <div class="n-text-bottom">
+                            <h3 class="n-title-bottom">this is some dummy title</h3>
+                            <p class="n-subtitle-bottom">This is only dummy subtitle, not Lorem Ipsum. Hello World, i'm here to see you!!!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>

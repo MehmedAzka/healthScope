@@ -41,7 +41,7 @@ $photo = $_SESSION['photo'];
     <nav>
         <div class="nav-content">
             <div class="logo">
-                <a href="home.php"><img src="images/healthScope.png" alt=""></a>
+                <a href="home.php"><img src="images/logo.png" alt=""></a>
                 <span class="hamburger none" onclick="toggle()">
                     <i id="bars" class="ri-menu-line"></i>
                 </span>
@@ -194,7 +194,7 @@ $photo = $_SESSION['photo'];
                     </div>
                 <?php } ?>
             </div>
-            <a href="#"><button>View More Topic</button></a>
+            <a href="health.php"><button>View More Topic</button></a>
         </div>
     </section>
     <!-- end topic 1 -->
@@ -268,60 +268,73 @@ $photo = $_SESSION['photo'];
     <!-- accordion -->
     <section>
         <div class="faq">
-            <ul id="accordion">
-                <li class="contentBx">
-                    <label for="a-1">#1 Why Use HealthScope? <span><i class="fa-solid fa-caret-right"></i></span></label>
-                    <input type="radio" name="accordion" id="a-1">
-                    <div class="acc-content">
-                        <p>This website provides various tips and tricks so you can maintain your health and immunity.
-                            Actually, on this website there are ways for you to memorize the Quran quickly and
-                            efficiently, it all depends on the parameters of your ability to memorize the Quran.</p>
-                    </div>
-                </li>
+            <div class="accordion">
+                <div class="accordion-content">
+                    <header>
+                        <span class="accordion-title">Why should I use a HealthScope?</span>
+                        <i class="ri-arrow-down-s-fill"></i>
+                    </header>
 
-                <li class="contentBx">
-                    <label for="a-2">#2 Can I ask something to a health expert? <span><i class="fa-solid fa-caret-right"></i></span></label>
-                    <input type="radio" name="accordion" id="a-2">
-                    <div class="acc-content">
-                        <p>On this website there is a place for you to communicate with each other, share stories about
-                            health, symptoms of diseases that perhaps only a few people know about, and much more. Of
-                            course, you can ask health experts, people who are experienced in the field of herbal
-                            medicine and many more.</p>
-                    </div>
-                </li>
+                    <p class="accordion-desc">
+                        HeatlhScope provides a media website that provides health services for students at Islamic
+                        Boarding Schools, and this site is of course still in the development stage. with the hope that
+                        in the future, this website will be useful for all mankind.
+                    </p>
+                </div>
 
-                <li class="contentBx">
-                    <label for="a-3">#3 Can I contribute to the development of this website? <span><i class="fa-solid fa-caret-right"></i></span></label>
-                    <input type="radio" name="accordion" id="a-3">
-                    <div class="acc-content">
-                        <p>You can contribute to the development of this website. We would really appreciate any
-                            contribution you can give us. You can donate your extra money to run this website. We hope
-                            that this website can help all users who want to learn or just want to know about a disease
-                            and how to treat it.</p>
-                    </div>
-                </li>
+                <div class="accordion-content">
+                    <header>
+                        <span class="accordion-title">What can I get from HealthScope?</span>
+                        <i class="ri-arrow-down-s-fill"></i>
+                    </header>
 
-                <li class="contentBx">
-                    <label for="a-4">#4 Are there events to share experiences between santri at their respective
-                        Islamic boarding schools? <span><i class="fa-solid fa-caret-right"></i></span></label>
-                    <input type="radio" name="accordion" id="a-4">
-                    <div class="acc-content">
-                        <p>We dedicate this website to all humanity in this world, especially to santri who are
-                            memorizing and murojaah the Quran. We provide a forum for santri to share their
-                            experiences at Islamic boarding schools with many people.</p>
-                    </div>
-                </li>
+                    <p class="accordion-desc">
+                        You can look for articles about health and traditional medicine, of course with herbal
+                        medicines. Here you can also discuss health between users and experts in the health sector. with
+                        the hope of maintaining the health of all users safely and comfortably.
+                    </p>
+                </div>
 
-                <li class="contentBx">
-                    <label for="a-5">#5 Empty <span><i class="fa-solid fa-caret-right"></i></span></label>
-                    <input type="radio" name="accordion" id="a-5">
-                    <div class="acc-content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, accusamus molestiae labore,
-                            ullam voluptatibus sequi soluta unde dignissimos iusto accusantium non temporibus error
-                            ipsam dolores assumenda voluptatum officiis libero minima.</p>
-                    </div>
-                </li>
-            </ul>
+                <div class="accordion-content">
+                    <header>
+                        <span class="accordion-title">Can I collaborate with HealthScope?</span>
+                        <i class="ri-arrow-down-s-fill"></i>
+                    </header>
+
+                    <p class="accordion-desc">
+                        Those of you who want to collaborate with us, of course we will gladly welcome it. Of course,
+                        there are several conditions for collaborating, so don't worry about fraud from us. If there is
+                        something uncomfortable about our service, then you can report it to us by contacting us.
+                    </p>
+                </div>
+
+                <div class="accordion-content">
+                    <header>
+                        <span class="accordion-title">Can I search for content about the Quran on HealthScope?</span>
+                        <i class="ri-arrow-down-s-fill"></i>
+                    </header>
+
+                    <p class="accordion-desc">
+                        You can search for all article content here. You can even add content from the article, by
+                        writing your article on the "Health" page, and you will verify your article first, if from our
+                        side your article is safe for us to publish, then we will display it on the "Health" page too .
+                        you can read your own articles here!!
+                    </p>
+                </div>
+
+                <div class="accordion-content">
+                    <header>
+                        <span class="accordion-title">How can I support the HealthScope community?</span>
+                        <i class="ri-arrow-down-s-fill"></i>
+                    </header>
+
+                    <p class="accordion-desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit velit voluptas ea omnis
+                        voluptatem eum at molestiae non laudantium, rerum saepe consequuntur ex! Cumque vitae atque
+                        exercitationem porro nesciunt! Minus.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
     <!-- end accordion -->
@@ -395,6 +408,7 @@ $photo = $_SESSION['photo'];
 <script src="js/script.js"></script>
 <script src="js/video.js"></script>
 <script src="js/popup.js"></script>
+<script src="js/accordion.js"></script>
 
 <script>
     // USER FUNCTION
