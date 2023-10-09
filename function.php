@@ -6,6 +6,7 @@ session_start();
 if (isset($_POST['regis-user'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
+    $date = date('Y-m-d H:i:s');
 
     // Pengecekan konfirmasi kata sandi
     $password = $_POST['password'];
@@ -32,7 +33,7 @@ if (isset($_POST['regis-user'])) {
             echo "<script>alert('Username atau email sudah terdaftar!');</script>";
             header("location: index.php");
         } else {
-            $sql = "INSERT INTO user (username, email, pass, photo, role) VALUES ('$username', '$email', '$passwordHash', '$photo', '$role')";
+            $sql = "INSERT INTO user (username, email, pass, photo, role, created_date) VALUES ('$username', '$email', '$passwordHash', '$photo', '$role', '$date')";
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script>alert('You have registered!');</script>";
@@ -58,8 +59,10 @@ if (isset($_POST['login-user'])) {
         if (password_verify($password, $row['pass'])) {
             $_SESSION['id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
+            $_SESSION['email'] = $row['email'];
             $_SESSION['photo'] = $row['photo'];
             $_SESSION['role'] = $row['role'];
+            $_SESSION['created_date'] = $row['created_date'];
 
             if ($_SESSION['role'] == 'user') {
                 header("location: home.php");
@@ -139,11 +142,63 @@ $deleteImage = function ($tabel, $id, $imageField, $imageDir) use ($conn) {
     return $result;
 };
 
+// EDIT PROFILE PARAMS
+$update = function ($tabel, $data, $id) use ($conn) {
+    $update_values = '';
+    foreach ($data as $key => $value) {
+        $update_values .= "$key='$value', ";
+    }
+    $update_values = rtrim($update_values, ', '); // Menghapus koma terakhir dan spasi
+
+    $query = "UPDATE $tabel SET $update_values WHERE id=$id";
+    $result = $conn->query($query);
+    return $result;
+};
+
+// EDIT PROFILE FUNCTION
+if (isset($_POST['edit-profile'])) {
+    $id = $_POST['id'];
+    $data = [];
+
+    if (!empty($_POST['username'])) {
+        $data['username'] = $_POST['username'];
+    }
+
+    if (!empty($_POST['photo'])) {
+        $data['photo'] = $_POST['photo'];
+    }
+
+    if (!empty($_POST['email'])) {
+        $data['email'] = $_POST['email'];
+    }
+
+    if (!empty($_POST['pass'])) {
+        $passwordHash = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+        $data['pass'] = $passwordHash;
+    }
+
+    // Memeriksa apakah ada data yang akan diupdate
+    if (!empty($data)) {
+        $data['created_date'] = date('Y-m-d H:i:s');
+        $tabel = "user";
+
+        $result = $update($tabel, $data, $id);
+
+        if ($result) {
+            header("location: profile.php");
+        } else {
+            echo "Error: " . $conn->error;
+        }
+    } else {
+        echo "Tidak ada data yang diisi untuk diperbarui.";
+    }
+}
+
 // COMMENT ADD
 if (isset($_POST['dp-submit'])) {
     $des = $_GET['forum'];
 
-    $name = $_SESSION['username'];
+    $name = $_SESSION['id'];
     $comment = htmlspecialchars($_POST['dp-input']);
     $commented = $des;
     $date = date('Y-m-d H:i:s');
