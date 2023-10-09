@@ -13,7 +13,6 @@ window.onscroll = function () {
   }
 };
 
-// USER FUNCTION
 let subMenu = document.querySelector(".sub-menu-wrap");
 
 function toggleMenu() {
@@ -21,7 +20,7 @@ function toggleMenu() {
 }
 
 function goBack() {
-  window.history.back();
+  window.location.href = 'home.php';
 }
 
 addDiscussionButton.addEventListener("click", function () {
