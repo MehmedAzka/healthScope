@@ -11,6 +11,11 @@ input {
   border: none;
 }
 
+input[name="username"],
+input[name="email"] {
+  text-transform: lowercase;
+}
+
 hr {
   border: 0;
   height: 1px;
@@ -19,13 +24,30 @@ hr {
   margin: 15px 0 10px;
 }
 
+.img-edit {
+  position: relative;
+}
+
 .img-profile {
   min-width: 100px;
   min-height: 100px;
   object-fit: cover;
   border-radius: 50px;
   border: 1px solid #111;
-  margin-bottom: 0.4rem;
+  /* margin-bottom: 0.4rem; */
+}
+
+.ri-edit-box-line {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 7px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1.5px solid #111;
+  border-radius: 50px;
+  background: #fff;
+  cursor: pointer;
 }
 
 .row {
@@ -87,6 +109,28 @@ hr {
 
 .back button:hover,
 .back button:active {
+  background-color: #37bd6b;
+  color: white;
+  border-color: #37bd6b;
+}
+
+.edit-button {
+  display: none;
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+  width: 7rem;
+  margin: 20px 0 0 0;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: #fff;
+  color: #37bd6b;
+  border: 2px solid #37bd6b;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.edit-button:hover,
+.edit-button:active {
   background-color: #37bd6b;
   color: white;
   border-color: #37bd6b;

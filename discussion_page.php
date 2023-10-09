@@ -5,7 +5,7 @@ $id = $_GET['forum'];
 $data = $find('discussion', $id);
 
 $show = $conn->query("SELECT * FROM comment WHERE commented = '$id' ORDER BY created_date DESC");
-$sesID = $_SESSION['username'];
+$sesID = $_SESSION['id'];
 ?>
 
 <!DOCTYPE html>
