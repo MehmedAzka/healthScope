@@ -1,0 +1,137 @@
+.profile {
+  height: 100vh;
+  display: flex;
+  padding: 5rem;
+  background: white;
+  flex-direction: column;
+}
+
+input {
+  padding: 3px;
+  border: none;
+}
+
+input[name="username"],
+input[name="email"] {
+  text-transform: lowercase;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+  margin: 15px 0 10px;
+}
+
+.img-edit {
+  position: relative;
+}
+
+.img-profile {
+  min-width: 100px;
+  min-height: 100px;
+  object-fit: cover;
+  border-radius: 50px;
+  border: 1px solid #111;
+  /* margin-bottom: 0.4rem; */
+}
+
+.ri-edit-box-line {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 7px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1.5px solid #111;
+  border-radius: 50px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.row-main {
+  display: flex;
+  justify-content: center;
+}
+
+.row-main .info-left,
+.info-right {
+  width: 27rem;
+  border: 3px solid #37bd6b;
+  border-radius: 20px;
+  padding: 1.5rem 1rem;
+}
+
+.row-main .info-left {
+  margin-right: 30px;
+}
+
+.row-main .input-edit {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 4rem;
+  padding-left: 0.25rem;
+}
+
+.row-main .info-right span {
+  font-size: 10px;
+  color: #ccc;
+  padding-left: 4px;
+}
+
+.input-edit p {
+  font-size: 13px;
+}
+
+.back {
+  background-color: white;
+  position: absolute;
+  padding: 4rem 5rem;
+}
+
+.back button {
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: #fff;
+  color: #37bd6b;
+  border: 2px solid #37bd6b;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.back button:hover,
+.back button:active {
+  background-color: #37bd6b;
+  color: white;
+  border-color: #37bd6b;
+}
+
+.edit-button {
+  display: none;
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+  width: 7rem;
+  margin: 20px 0 0 0;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: #fff;
+  color: #37bd6b;
+  border: 2px solid #37bd6b;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.edit-button:hover,
+.edit-button:active {
+  background-color: #37bd6b;
+  color: white;
+  border-color: #37bd6b;
+}

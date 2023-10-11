@@ -13,12 +13,22 @@ window.onscroll = function () {
   }
 };
 
+let subMenu = document.querySelector(".sub-menu-wrap");
+
+function toggleMenu() {
+  subMenu.classList.toggle("open-menu");
+}
+
+function goBack() {
+  window.location.href = 'home.php';
+}
+
 addDiscussionButton.addEventListener("click", function () {
-    if (!secAddDisVoid.classList.contains("active")) {
-        secAddDisVoid.classList.add("active");
-    } else {
-        secAddDisVoid.classList.remove("active");
-    }
+  if (!secAddDisVoid.classList.contains("active")) {
+    secAddDisVoid.classList.add("active");
+  } else {
+    secAddDisVoid.classList.remove("active");
+  }
 });
 
 // const showMenu = (toggleId, navId) => {
