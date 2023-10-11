@@ -21,7 +21,7 @@ include "function.php";
 <body>
     <div class="container">
         <!-- Register -->
-        <!-- <div class="signup">
+        <div class="signup">
             <img src="images/logo-1.png" alt="">
             <form action="function.php" method="post" enctype="multipart/form-data">
                 <input id="username" placeholder="Username" type="text" maxlength="225" autocomplete="off"
@@ -38,21 +38,21 @@ include "function.php";
 
                 <input type="hidden" value="user" name="role">
 
-                <?php if (isset($_SESSION['error_r'])) { ?>
+                <?php if (isset($_SESSION['error'])) { ?>
                     <p class="alert">
-                        <?php echo $_SESSION['error_r']; ?>
+                        <?php echo $_SESSION['error']; ?>
                     </p>
-                    <?php unset($_SESSION['error_r']); ?>
+                    <?php unset($_SESSION['error']); ?>
                 <?php } ?>
 
                 <button type="submit" value="Submit" name="regis-user">Sign Up</button>
             </form>
-            <p>Already have an account? <a href="#" onclick="toggleForm('login')">Login</a></p>
-        </div> -->
+            <p>Already have an account? <a href="index.php">Login</a></p>
+        </div>
 
 
         <!-- Login -->
-        <div class="login">
+        <!-- <div class="login">
             <img src="images/logo-1.png" alt="">
             <form action="function.php" method="post">
 
@@ -69,9 +69,9 @@ include "function.php";
                 <?php } ?>
 
                 <button type="submit" value="Submit" name="login-user">Login</button>
-                <p>Don't have an account? <a href="register.php">Sign Up</a></p>
+                <p>Don't have an account? <a href="#" onclick="toggleForm('signup')">Sign Up</a></p>
             </form>
-        </div>
+        </div> -->
 
     </div>
 </body>

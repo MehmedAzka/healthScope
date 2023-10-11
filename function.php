@@ -13,7 +13,9 @@ if (isset($_POST['regis-user'])) {
     $confirmPassword = $_POST['confirm-password'];
 
     if ($password !== $confirmPassword) {
-        echo "<script>alert('Konfirmasi kata sandi tidak cocok!');</script>";
+        $_SESSION['error'] = "Confirm password does not match";
+        header("location: register.php");
+        exit();
     } else {
         $split = explode('.', $_FILES['photo']['name']);
         $extention = $split[count($split) - 1];
@@ -30,17 +32,20 @@ if (isset($_POST['regis-user'])) {
         $sqlTake = $conn->query("SELECT * FROM user WHERE email='$email' OR username='$username'");
 
         if (mysqli_num_rows($sqlTake) > 0) {
-            echo "<script>alert('Username atau email sudah terdaftar!');</script>";
-            header("location: index.php");
+            $_SESSION['error'] = "Username or email has been registered";
+            header("location: register.php");
+            exit();
         } else {
             $sql = "INSERT INTO user (username, email, pass, photo, role, created_date) VALUES ('$username', '$email', '$passwordHash', '$photo', '$role', '$date')";
 
             if (mysqli_query($conn, $sql)) {
-                echo "<script>alert('You have registered!');</script>";
+                $_SESSION['error'] = "You have registered";
                 header("location: index.php");
                 exit();
             } else {
                 $_SESSION['error'] = "Terjadi kesalahan. Silakan coba lagi!";
+                header("location: register.php");
+                exit();
             }
         }
     }
@@ -72,12 +77,12 @@ if (isset($_POST['login-user'])) {
                 exit();
             }
         } else {
-            $_SESSION['error'] = "<script>alert('Wrong username or email!');</script>";
+            $_SESSION['error'] = "Wrong username or password";
             header("location: index.php");
             exit();
         }
     } else {
-        $_SESSION['error'] = "<script>alert('Not found username or email!');</script>";
+        $_SESSION['error'] = "Not found username";
         header("location: index.php");
         exit();
     }
