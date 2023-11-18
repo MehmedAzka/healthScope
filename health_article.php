@@ -21,24 +21,24 @@ $data = $find('h_topic', $id);
 
 <body>
     <?php while ($result = $data->fetch_assoc()) { ?>
-        <div class="ha-start">
-            <div class="back-to-start">
-                <a href="health.php"><i class="ri-arrow-left-s-line"></i> BACK</a>
+            <div class="ha-start">
+                <div class="back-to-start">
+                    <a href="health.php"><i class="ri-arrow-left-s-line"></i> BACK</a>
+                </div>
+                <div class="ha-head">
+                    <h1>
+                        <?= $result['title']; ?> <br>
+                    </h1>
+                </div>
             </div>
-            <div class="ha-head">
-                <h1>
-                    <?= $result['title']; ?> <br>
-                </h1>
+            <div class="ha-container">
+                <div class="ha-desc">
+                    <p>
+                    <pre><?= $result['subtitle']; ?></pre>
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="ha-container">
-            <div class="ha-desc">
-                <p>
-                <pre><?= $result['subtitle']; ?></pre>
-                </p>
-            </div>
-        </div>
-    <?php } ?>
+        <?php } ?>
 
 </body>
 

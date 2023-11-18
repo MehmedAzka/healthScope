@@ -306,7 +306,7 @@ p.cd {
 button.ri-delete-bin-6-line {
   border: none;
   color: red;
-  font-size: 20px;
+  font-size: 22px;
   margin-right: 5px;
   cursor: pointer;
   transition: 0.2s ease;
@@ -315,7 +315,7 @@ button.ri-delete-bin-6-line {
 button.ri-edit-box-line {
   border: none;
   color: sandybrown;
-  font-size: 20px;
+  font-size: 22px;
   margin-right: 5px;
   cursor: pointer;
   transition: 0.2s ease;
@@ -325,6 +325,7 @@ button.ri-delete-bin-6-line:hover,
 button.ri-edit-box-line:hover {
   transform: scale(1.1);
 }
+
 /* === CONTENT END === */
 
 /* === DATALIST START */

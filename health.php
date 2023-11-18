@@ -1,7 +1,6 @@
 <?php
 include "function.php";
 
-
 $result = null;
 $showAll = null;
 $search_term = null;
@@ -104,7 +103,7 @@ $showU = $find('user', $sesID);
 
             <form method="GET">
                 <div class="src-box">
-                    <input class="src-search" type="text" name="src-box" list="title" autocomplete="off" placeholder="Search" required>
+                    <input class="src-search" type="text" name="src-box" list="title" autocomplete="off" placeholder="find something..." required>
                     <button class="src-button" type="submit" name="src"><i class="ri-search-line"></i></button>
                 </div>
             </form>
